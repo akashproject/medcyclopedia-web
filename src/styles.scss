@@ -1,0 +1,324 @@
+/*common*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #0d4e9e;
+  --secondary-color: #28a745;
+  --ternary-color: #E85B22;
+  --grey-color: #ccc;
+  --gery-color2: #737070;
+  --dark-color: #000;
+  --white-color: #fff;
+  --description-font: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--description-font);
+  font-size: 15px;
+  color: var(--dark-color);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.pt {
+  padding-top: 40px;
+}
+
+.pb {
+  padding-bottom: 40px;
+}
+
+/*common*/
+.auth_details {
+  width: 100%;
+}
+
+.auth_details .slide_back {
+  width: 100%;
+  max-width: 40%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+
+.auth_details .slide_back img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.auth_details .slide_back .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  background-color: #ff4081;
+  border-radius: 100%;
+}
+
+.auth_details .log_in_back {
+  max-width: 60%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  padding-top: 64px;
+  position: relative;
+}
+
+.auth_details .log_in_back .step {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.auth_details .log_in_back h4 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.auth_details .log_in_back h4:hover {
+  text-decoration: underline;
+}
+
+.auth_details .log_in_back h2 {
+  color: var(--ternary-color);
+  font-size: 22px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.auth_details .log_in_back .text-center i {
+  font-size: 56px;
+  margin-bottom: 40px;
+}
+
+.auth_details .log_in_back .text-center .step {
+  font-style: normal;
+  font-size: 14px;
+}
+
+.auth_details .log_in_back .text-center button {
+  display: block;
+  width: 125px;
+}
+
+.auth_details .log_in_back form {
+  width: 365px;
+  margin-top: 80px;
+}
+
+.auth_details .log_in_back form.register {
+  margin-top: 40px;
+}
+
+.auth_details .log_in_back form.register button {
+  width: 125px;
+  height: 39px;
+}
+
+.auth_details .log_in_back form.confirm {
+  text-align: center;
+  width: 380px;
+}
+
+.auth_details .log_in_back form.confirm p {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.auth_details .log_in_back form.confirm input {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  text-align: center;
+  border-color: #e85b22;
+  font-size: 25px;
+  color: #0d4d9e;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(13, 77, 158, 0.3);
+          box-shadow: 0 5px 10px rgba(13, 77, 158, 0.3);
+}
+
+.auth_details .log_in_back form.confirm .d-flex {
+  margin-top: 10px;
+}
+
+.auth_details .log_in_back form.confirm button {
+  width: 125px;
+  height: 39px;
+  text-transform: capitalize;
+  margin: 15px 0 0 0;
+}
+
+.auth_details .log_in_back form.confirm button:disabled {
+  background-color: grey;
+}
+
+.auth_details .log_in_back form h6 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.auth_details .log_in_back form .portion {
+  width: 100%;
+  margin-bottom: 18px;
+  height: 40px;
+  position: relative;
+}
+
+.auth_details .log_in_back form .portion label {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.auth_details .log_in_back form .portion input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.3) 1px solid;
+  outline-style: none;
+  z-index: 2;
+  position: relative;
+  background-color: transparent;
+}
+
+.auth_details .log_in_back form .portion input:focus {
+  border-color: var(--ternary-color);
+}
+
+.auth_details .log_in_back form button {
+  background: var(--primary-color);
+  -webkit-box-shadow: 0 5px 10px rgba(13, 77, 158, 0.3);
+          box-shadow: 0 5px 10px rgba(13, 77, 158, 0.3);
+  border-radius: 10px;
+  opacity: 1;
+  font-size: 15px;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 66px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 10px;
+  clear: both;
+}
+
+.auth_details .log_in_back form span {
+  color: var(--ternary-color);
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  margin: 25px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.auth_details .log_in_back form p {
+  font-size: 14px;
+}
+
+.auth_details .log_in_back form p span {
+  display: inline;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1023px) {
+  .auth_details .slide_back img {
+    height: 51vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .auth_details .slide_back img {
+    height: 37vh;
+  }
+  .auth_details .log_in_back {
+    padding: 30px;
+  }
+  .auth_details .log_in_back h4 {
+    top: 13px;
+  }
+  .auth_details .log_in_back form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .auth_details {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .auth_details .slide_back {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .auth_details .slide_back img {
+    height: 55vh;
+  }
+  .auth_details .log_in_back {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    padding: 30px;
+  }
+  .auth_details .log_in_back div {
+    width: 100%;
+  }
+  .auth_details .log_in_back h4 {
+    top: 13px;
+  }
+  .auth_details .log_in_back form {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

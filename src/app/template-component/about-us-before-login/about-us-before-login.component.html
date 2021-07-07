@@ -1,0 +1,34 @@
+<div class="auth_details d-flex justify-content-between">
+    <div class="slide_back">
+        <app-before-login-slider></app-before-login-slider>
+    </div>
+    <div class="log_in_back d-flex justify-content-center">
+        <div class="about">
+            <h2>ABOUT US</h2>
+            <p>We, at Infinity, which is a 14 years old education institution and education consultancy based at Kolkata, West Bengal, India, are proud to announce the launch of its very unique Education App <span>MEDCYCLOPEDIA</span> focusing mainly on medical education and allied health sciences in India and Overseas. The name <span>MEDCYCLOPEDIA</span> has been derived from the word Encyclopedia, where one can get complete information on their desired medical courses starting from the course structure, institutions, fees structure, entrance examinations, eligibility criteria, ranking and reviews of the institution. This app is a unique platform where one will not only get information but also counselling assistance and direct admission assistance. This is a platform which will get the students customized and 360 degree solutions based on their aspiration, dream, discipline, city, budget and eligibility criteria.
+            </p>
+
+            <br><br>
+            
+            <p *ngIf="hide"><span>MEDCYCLOPEDIA</span> has been designed with high end technology and made user friendly both for colleges and students. This first-time-ever app is the result of our years of research and experience where this platform can be a medium to reduce distance between college and students. This app is exclusively dedicated to the health sciences and allied health sciences curriculum. This app answers all the queries of students and their parents who are looking for courses like MBBS, BDS, MD/MS/MDS/Diploma, BHMS, BAMS, Post graduation in Ayurveda and homeopathy along with pharmacy and nursing courses.<br><br>
+
+            For more information regarding services of <span>MEDCYCLOPEDIA</span> please contact 8420967999 and 8335056545</p>
+            <div class="show_hide" [class.active]="active" (click)="smsl()">
+                <span class="more">Shoe More +</span>
+                <span class="less">Shoe Less -</span>
+            </div>
+            <div class="about_button_back d-flex justify-content-center align-items-center">
+                <div class="button_back">
+                    <P>First time here?</P>
+                    <button routerLink="/sign-up">SIGN UP</button>
+                </div>
+                <div class="button_back">
+                    <P>Existing user?</P>
+                    <button routerLink="/login">LOG IN</button>
+                </div>
+                
+            </div>
+        </div>
+         
+    </div>
+</div>

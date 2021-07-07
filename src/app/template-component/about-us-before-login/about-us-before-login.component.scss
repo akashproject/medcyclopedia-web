@@ -1,0 +1,57 @@
+.about{
+    max-width: 600px; text-align: justify;
+    span{
+        color: var(--ternary-color);
+    }
+    .show_hide{
+        cursor: pointer;
+        text-decoration: underline;
+        display: flex; justify-content: flex-end;
+        color: var(--ternary-color);
+        .more{
+            display: block;
+        }
+        .less{
+            display: none;
+        }
+        &.active{
+            .more{
+                display: none;
+            }
+            .less{
+                display: block;
+            }
+        }
+    }
+}
+
+.about_button_back{
+    width: 100%;
+    .button_back{
+        margin-right: 40px; text-align: center;
+        &:last-child{
+            margin-right: 0;
+        }
+        &:last-child{
+            button{
+                background-color: var(--primary-color);
+            }
+        }
+        p{
+            font-size: 14px; color: rgba(0,0,0,.5); margin-bottom: 5px;
+        }
+        button{
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 14px;
+            border: none;
+            outline-style: none;
+            background-color: var(--ternary-color);
+        }
+    }
+}
