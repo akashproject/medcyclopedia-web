@@ -1,0 +1,40 @@
+<header class="d-flex align-items-center justify-content-between">
+    <ul class="left d-flex align-items-center ">
+        <li><img src="assets/images/profile.png" alt=""></li>
+        <li><img src="assets/images/refer.png" alt=""></li>
+    </ul>
+    <div class="rigth d-flex align-items-center">
+        <input type="search" placeholder="Search by college name" name="" id="">
+        <div class="dropdown_back d-flex align-items-center">
+            <div class="pro d-flex align-items-center">
+                <img src="assets/images/empty-avatar.png" alt="">
+                 Welcome Akash
+            </div>
+            <div class="hamburger" (click)="menuopen()">
+                <mat-icon aria-hidden="true">menu</mat-icon>
+            </div>
+            <ul class="menu" [class.open]="menu">
+                <li class="d-flex align-center">
+                    <mat-icon aria-hidden="true">info</mat-icon>
+                    About Infinity
+                </li>
+                <li class="d-flex align-center">
+                    <mat-icon aria-hidden="true">event</mat-icon>
+                    News and Events
+                </li>
+                <li class="d-flex align-center">
+                    <mat-icon aria-hidden="true">tv</mat-icon>
+                    Media
+                </li>
+                <li class="d-flex align-center">
+                    <mat-icon aria-hidden="true">label_important</mat-icon>
+                    T & C
+                </li>
+                <li class="d-flex align-center">
+                    <mat-icon aria-hidden="true">login</mat-icon>
+                    Logout
+                </li>
+              </ul>
+        </div>
+    </div>
+</header>

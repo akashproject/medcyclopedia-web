@@ -1,0 +1,21 @@
+.side_bar{
+    width: 240px; position: fixed; height: 100vh;
+    padding: 0 20px; border-right: 1px solid rgba(0,0,0,.12);
+    background-color: #fff;
+    .logo{
+        width: 100%;
+        img{
+            width: 100%; height: auto; object-fit: cover;
+        }
+    }
+    .menu_button_back{
+        width: 100%; margin-top: 10px;
+        li{
+           
+            list-style: none; cursor: pointer;
+        }
+    }
+    .design_image{
+        width: 100%; margin-top: 20px;
+    }
+}

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -11,7 +10,15 @@ import { ForgotPassComponent } from './template-component/forgot-pass/forgot-pas
 import { ConfirmUserComponent } from './template-component/confirm-user/confirm-user.component';
 import { BeforeLoginSliderComponent } from './shared/before-login-slider/before-login-slider.component';
 import { AboutUsBeforeLoginComponent } from './template-component/about-us-before-login/about-us-before-login.component';
+import { SiteHeaderComponent } from './shared/site-header/site-header.component';
+import { SiteBannerComponent } from './shared/site-banner/site-banner.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { MatIconModule } from '@angular/material/icon';
+import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
+import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
+import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +29,18 @@ import { AboutUsBeforeLoginComponent } from './template-component/about-us-befor
     ForgotPassComponent,
     ConfirmUserComponent,
     BeforeLoginSliderComponent,
-    AboutUsBeforeLoginComponent
+    AboutUsBeforeLoginComponent,
+    SiteHeaderComponent,
+    SiteBannerComponent,
+    MyInstitutesComponent,
+    MyActivitiesComponent,
+    MyAlertsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

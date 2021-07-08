@@ -1,0 +1,23 @@
+.list_back{
+    width: 100%; margin: 0; 
+    li{
+        width: 100%;
+        list-style: none;
+        border-bottom: rgba(0,0,0,.2) 1px solid;
+        padding: 15px 0;
+        h2{
+            text-align: left;
+            font: Medium 10px/16px Roboto;
+            letter-spacing: 0;
+            color: #e85b22;
+            font-size: 16px !important;
+            font-weight: normal;
+        }
+        p{
+            color: #58b4df; font-size: 12px;
+            span{
+                color: #6d1fff;
+            }
+        }
+    }
+}

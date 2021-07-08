@@ -1,0 +1,21 @@
+.carousel{
+    img{
+        width: 100%;
+    }
+}
+
+.bottom_notification{
+    width: 100%; background-color: #0c4d9d; color: #fff; font-size: 14px; height: 40px; position: relative; overflow: hidden;
+    .track{
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 7s linear infinite;
+        
+    }
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }

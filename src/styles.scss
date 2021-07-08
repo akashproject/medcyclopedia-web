@@ -1,5 +1,6 @@
 /*common*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -64,6 +65,71 @@ img {
 }
 
 /*common*/
+.all_pages{
+  width: calc(100% - 240px); height: 100%; background: #eee; position: fixed; top: 0; right: 0; overflow-y: scroll;
+}
+.all_detail_back{
+  display: block;
+    position: relative;
+    padding: 16px 32px;
+    border-radius: 4px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgb(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    background-color: #fff;
+    margin: 20px 0;
+    width: 100%;
+    h1{
+      text-align: left;
+      font: 700 22px/40px Roboto;
+      letter-spacing: 0;
+      color: #e85b22;
+      opacity: 1;
+      margin: 0 0 20px 0;
+    }
+}
+
+.all_layout{
+  width: 100%;
+  flex-wrap: wrap;
+  .left{
+    max-width: 65%;
+    flex: 0 0 65%;
+    border-right: rgba(0,0,0,.2) 1px solid;
+    padding: 20px 0;
+    .wrap{
+      flex: 0 0 50%; max-width: 50%; 
+    }
+  }
+  .right{
+    max-width: 35%;
+    flex: 0 0 35%;
+    p{
+      color: #e85b22; margin-bottom: 15px;
+    }
+    img{
+      cursor: pointer;
+    }
+  }
+}
+
+.button{
+  background: var(--primary-color);
+    box-shadow: 0 5px 10px rgb(13 77 158 / 30%);
+    border-radius: 10px;
+    opacity: 1;
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+    border: none;
+    width: 258px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    margin-top: 10px;
+    clear: both;
+    cursor: pointer;
+}
+
+
 .auth_details {
   width: 100%;
 }
@@ -83,7 +149,7 @@ img {
      object-fit: cover;
 }
 
-.auth_details .slide_back .carousel-indicators li {
+.carousel-indicators li {
   width: 10px;
   height: 10px;
   background-color: #ff4081;
@@ -322,3 +388,5 @@ img {
   }
 }
 /*# sourceMappingURL=style.css.map */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

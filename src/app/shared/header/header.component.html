@@ -1,0 +1,20 @@
+<ng-container 
+*ngIf="router.url === '/login' ||  
+router.url === '/sign-up' ||
+router.url === '/forgot-pass' ||
+router.url === '/confirm-user'||
+router.url === '/aboutus';then blankheader; else mainheader">
+</ng-container>
+<ng-template #mainheader>
+    <div class="side_bar">
+        <div class="logo"><img src="assets/images/logo.jpeg" alt=""></div>
+        <ul class="menu_button_back d-flex flex-column justify-content-center align-items-center">
+            <li routerLink="/home"><img src="assets/images/menu1.png" alt=""></li>
+            <li routerLink="/my-institutes"><img src="assets/images/menu2.png" alt=""></li>
+            <li routerLink="/my-activities"><img src="assets/images/menu3.png" alt=""></li>
+            <li routerLink="/my-alerts"><img src="assets/images/menu4.png" alt=""></li>
+        </ul>
+        <img src="assets/images/header_design.png" alt="" class="design_image">
+    </div>
+</ng-template> 
+<ng-template #blankheader></ng-template>
