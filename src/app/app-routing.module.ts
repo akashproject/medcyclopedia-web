@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsBeforeLoginComponent } from './template-component/about-us-before-login/about-us-before-login.component';
 import { ConfirmUserComponent } from './template-component/confirm-user/confirm-user.component';
+import { ExpertCounsellingComponent } from './template-component/expert-counselling/expert-counselling.component';
 import { ForgotPassComponent } from './template-component/forgot-pass/forgot-pass.component';
 import { HomeComponent } from './template-component/home/home.component';
+import { InfinityComponent } from './template-component/infinity/infinity.component';
 import { LoginComponent } from './template-component/login/login.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
 import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.component';
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { SignUpComponent } from './template-component/sign-up/sign-up.component';
+import { TncComponent } from './template-component/tnc/tnc.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'my-institutes', component: MyInstitutesComponent },
   { path: 'my-activities', component: MyActivitiesComponent },
   { path: 'my-alerts', component: MyAlertsComponent },
+  { path: 'expert-counselling', component: ExpertCounsellingComponent },
+  { path: 'infinity', component: InfinityComponent },
+  { path: 'tnc', component: TncComponent },
 ];
 
 @NgModule({

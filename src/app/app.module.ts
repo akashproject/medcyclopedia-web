@@ -19,6 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
 import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.component';
+import { ExpertCounsellingComponent } from './template-component/expert-counselling/expert-counselling.component';
+import { InfinityComponent } from './template-component/infinity/infinity.component';
+import { TncComponent } from './template-component/tnc/tnc.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,10 @@ import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.comp
     SiteBannerComponent,
     MyInstitutesComponent,
     MyActivitiesComponent,
-    MyAlertsComponent
+    MyAlertsComponent,
+    ExpertCounsellingComponent,
+    InfinityComponent,
+    TncComponent
   ],
   imports: [
     BrowserModule,

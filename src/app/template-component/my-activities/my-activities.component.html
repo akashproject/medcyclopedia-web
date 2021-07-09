@@ -6,22 +6,93 @@
             <h1>My Activity</h1>
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
-                    <div class="wrap"><div class="button">Detailed Page View</div></div>
-                    <div class="wrap"><div class="button">Course Application</div></div>
-                    <div class="wrap"><div class="button">Photo Gallery View</div></div>
-                    <div class="wrap"><div class="button">Virtual Tour</div></div>
-                    <div class="wrap"><div class="button">Video Counselling</div></div>
-                    <div class="wrap"><div class="button">Audio Call</div></div>
-                    <div class="wrap"><div class="button">WhatsApp Chat</div></div>
+                    <div class="wrap"><div class="button" (click)="detailed_page_view()">Detailed Page View</div></div>
+                    <div class="wrap"><div class="button" (click)="course_app()">Course Application</div></div>
+                    <div class="wrap"><div class="button" (click)="photo_gallery_view()">Photo Gallery View</div></div>
+                    <div class="wrap"><div class="button" (click)="virtual_tour()">Virtual Tour</div></div>
+                    <div class="wrap"><div class="button" (click)="video_counselling()">Video Counselling</div></div>
+                    <div class="wrap"><div class="button" (click)="audio_call()">Audio Call</div></div>
+                    <div class="wrap"><div class="button" (click)="whatsapp_chat()">WhatsApp Chat</div></div>
                 </div>
                 <div class="right d-flex align-items-center justify-content-center">
                     <div class="d-flex flex-column align-items-center">
                         <p>For Expert Counselling</p>
-                        <img src="assets/images/click_here.png" alt="">
+                        <img src="assets/images/click_here.png" routerLink="/expert-counselling" alt="">
                     </div>
                 </div>
             </div>
+            
         </div>
+        <div class="all_detail_back" *ngIf="detailed_p_view">
+            <div class="all_layout">
+                <h2>Detailed Page View</h2>
+                <p>
+                    DEVDAHA MEDICAL COLLEGE,RUPANDEHI<br>
+                    Gouri Devi Institute of Medical Sciences and Hospital, Durgapur<br>
+                    Ramakrishna Mission Hospital , School Of Nursing<br>
+                </p>
+            </div>
+        </div>
+        <div class="all_detail_back" *ngIf="course_a">
+            <div class="all_layout">
+                <h2>Course Application</h2>
+                <p>DEVDAHA MEDICAL COLLEGE,RUPANDEHI</p>
+            </div>
+        </div>
+        
+
+
+        <div class="all_detail_back" *ngIf="photo_g_view">
+            <div class="all_layout">
+                <h2>Photo Gallery View</h2>
+                <div class="alert alert-danger" role="alert">
+                    You have not performed any activity for Photo Gallery View
+                </div>
+            </div>
+        </div>
+
+        <div class="all_detail_back" *ngIf="virtual_t">
+            <div class="all_layout">
+                <h2>Virtual Tour</h2>
+                <div class="alert alert-danger" role="alert">
+                    You have not performed any activity for Virtual Tour
+                </div>
+            </div>
+        </div>
+
+        <div class="all_detail_back" *ngIf="video_c">
+            <div class="all_layout">
+                <h2>Video Counselling</h2>
+                <div class="alert alert-danger" role="alert">
+                    You have not opted for any Video Counsellingcounselling
+                </div>
+            </div>
+        </div>
+
+        <div class="all_detail_back" *ngIf="audio_c">
+            <div class="all_layout">
+                <h2>Audio Call</h2>
+                <div class="alert alert-danger" role="alert">
+                    You have not opted for any Audio Callcounselling
+                </div>
+            </div>
+        </div>
+
+        <div class="all_detail_back" *ngIf="whatsapp_c">
+            <div class="all_layout">
+                <h2>WhatsApp Chat</h2>
+                <div class="alert alert-danger" role="alert">
+                    You have not opted for any WhatsApp Chatcounselling
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+       
+        
     </div>
     
 </div>
