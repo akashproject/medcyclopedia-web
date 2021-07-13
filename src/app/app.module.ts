@@ -22,6 +22,19 @@ import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.comp
 import { ExpertCounsellingComponent } from './template-component/expert-counselling/expert-counselling.component';
 import { InfinityComponent } from './template-component/infinity/infinity.component';
 import { TncComponent } from './template-component/tnc/tnc.component';
+import { MediaComponent } from './template-component/media/media.component';
+import { EventsComponent } from './template-component/events/events.component';
+import { FycComponent } from './template-component/fyc/fyc.component';
+import { FyiComponent } from './template-component/fyi/fyi.component';
+import { FindExamComponent } from './template-component/find-exam/find-exam.component';
+import { ExploreExamsComponent } from './template-component/explore-exams/explore-exams.component';
+import { AbroadComponent } from './template-component/abroad/abroad.component';
+import { CountryInfoComponent } from './template-component/country-info/country-info.component';
+import { PanelDiscussionComponent } from './template-component/panel-discussion/panel-discussion.component';
+import { NotificationComponent } from './template-component/notification/notification.component';
+import { EduAssistanceComponent } from './template-component/edu-assistance/edu-assistance.component';
+import { ScholarshipsComponent } from './template-component/scholarships/scholarships.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +53,19 @@ import { TncComponent } from './template-component/tnc/tnc.component';
     MyAlertsComponent,
     ExpertCounsellingComponent,
     InfinityComponent,
-    TncComponent
+    TncComponent,
+    MediaComponent,
+    EventsComponent,
+    FycComponent,
+    FyiComponent,
+    FindExamComponent,
+    ExploreExamsComponent,
+    AbroadComponent,
+    CountryInfoComponent,
+    PanelDiscussionComponent,
+    NotificationComponent,
+    EduAssistanceComponent,
+    ScholarshipsComponent
   ],
   imports: [
     BrowserModule,

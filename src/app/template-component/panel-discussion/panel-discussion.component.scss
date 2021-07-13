@@ -1,0 +1,17 @@
+.all_pages{
+    h2{
+        text-align: left;
+            font: 700 Italic 25px/17px Roboto;
+            letter-spacing: 0;
+            color: #0d4d9e;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-top: 29px;
+    }
+    .all_layout .left{
+        padding-right: 20px;
+        .alert{
+            width: 100%;
+        }
+    }
+}
