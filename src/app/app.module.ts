@@ -47,6 +47,7 @@ import { ProfileComponent } from './template-component/profile/profile.component
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 
 
 
@@ -89,6 +90,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     InstituteConfirmationComponent,
     ReferearnComponent,
     ProfileComponent,
+    AbroadInsListComponent,
     
     
   

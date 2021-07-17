@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsBeforeLoginComponent } from './template-component/about-us-before-login/about-us-before-login.component';
+import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 import { AbroadComponent } from './template-component/abroad/abroad.component';
 import { ConfirmUserComponent } from './template-component/confirm-user/confirm-user.component';
 import { CountryInfoComponent } from './template-component/country-info/country-info.component';
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'edu-assistance', component: EduAssistanceComponent },
   { path: 'scholarships', component: ScholarshipsComponent },
   { path: 'fyc/fyi/institute-list', component: InstituteListComponent },
+  { path: 'fyc/fyi/abroad-ins-list', component: AbroadInsListComponent },
   { path: 'fyc/fyi/institute-list/institute-details', component: InstituteDetailsComponent },
   { path: 'fyc/fyi/institute-list/institute-details/institute-confirmation', component: InstituteConfirmationComponent },
   { path: 'rne', component: ReferearnComponent },
