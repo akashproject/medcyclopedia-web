@@ -1,0 +1,28 @@
+.rne{
+    width: 100%; border: 1px solid #e85b22;
+    h3{
+        font-size: 17px;
+        color: #0d4d9e;
+        opacity: 1;
+        font-weight: normal;
+    }
+    p{
+        span{
+            color: #e85b22;
+        }
+    }
+    .email_area{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        .form-control{
+            width: 244px ;
+            margin-right: 20px;
+        }
+        button{
+            outline-style: none;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+    }
+}

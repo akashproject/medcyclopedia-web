@@ -1,0 +1,57 @@
+.form-check-input{
+    margin: 0 20px 0 0; position: relative;
+}
+.form-check-input:checked{
+    background-color: #000;
+}
+.expert a{
+    color: #007bff; 
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.check{
+    position: relative;
+}
+
+.check input[type="checkbox"]{
+    opacity: 0; position: absolute;
+}
+
+.check input[type="checkbox"] + label{
+    font-weight: normal;
+}
+.check input[type="checkbox"] + label span{
+    width: 17px;
+    height: 17px;
+    border: #757575 2px solid;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 0; 
+}
+.check input[type="checkbox"]:checked + label span{
+    background-color: #e85b22; border-color: #e85b22;
+}
+
+.expert  button{
+    background-color: var(--primary-color);
+    &:disabled {
+        background-color: grey;
+        box-shadow: 0 5px 10px rgb(13 77 158 / 30%);
+        border-radius: 10px;
+        opacity: 1;
+        font-size: 15px;
+        color: #fff;
+        outline: none;
+        border: none;
+        width: 135px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        margin-top: 10px;
+        clear: both;
+        text-transform: capitalize;
+    }
+}

@@ -14,6 +14,9 @@ import { FycComponent } from './template-component/fyc/fyc.component';
 import { FyiComponent } from './template-component/fyi/fyi.component';
 import { HomeComponent } from './template-component/home/home.component';
 import { InfinityComponent } from './template-component/infinity/infinity.component';
+import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
+import { InstituteDetailsComponent } from './template-component/institute-details/institute-details.component';
+import { InstituteListComponent } from './template-component/institute-list/institute-list.component';
 import { LoginComponent } from './template-component/login/login.component';
 import { MediaComponent } from './template-component/media/media.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
@@ -21,9 +24,14 @@ import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.comp
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { NotificationComponent } from './template-component/notification/notification.component';
 import { PanelDiscussionComponent } from './template-component/panel-discussion/panel-discussion.component';
+import { ProfileComponent } from './template-component/profile/profile.component';
+import { ReferearnComponent } from './template-component/referearn/referearn.component';
+
 import { ScholarshipsComponent } from './template-component/scholarships/scholarships.component';
 import { SignUpComponent } from './template-component/sign-up/sign-up.component';
+import { StudentSubscriptionComponent } from './template-component/student-subscription/student-subscription.component';
 import { TncComponent } from './template-component/tnc/tnc.component';
+
 
 
 const routes: Routes = [
@@ -38,6 +46,7 @@ const routes: Routes = [
   { path: 'my-activities', component: MyActivitiesComponent },
   { path: 'my-alerts', component: MyAlertsComponent },
   { path: 'expert-counselling', component: ExpertCounsellingComponent },
+  { path: 'student-subscription', component: StudentSubscriptionComponent },
   { path: 'infinity', component: InfinityComponent },
   { path: 'tnc', component: TncComponent },
   { path: 'media', component: MediaComponent },
@@ -52,6 +61,12 @@ const routes: Routes = [
   { path: 'notification', component: NotificationComponent },
   { path: 'edu-assistance', component: EduAssistanceComponent },
   { path: 'scholarships', component: ScholarshipsComponent },
+  { path: 'fyc/fyi/institute-list', component: InstituteListComponent },
+  { path: 'fyc/fyi/institute-list/institute-details', component: InstituteDetailsComponent },
+  { path: 'fyc/fyi/institute-list/institute-details/institute-confirmation', component: InstituteConfirmationComponent },
+  { path: 'rne', component: ReferearnComponent },
+  { path: 'profile', component: ProfileComponent },
+
 
 
 ];

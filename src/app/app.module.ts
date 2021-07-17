@@ -13,7 +13,12 @@ import { AboutUsBeforeLoginComponent } from './template-component/about-us-befor
 import { SiteHeaderComponent } from './shared/site-header/site-header.component';
 import { SiteBannerComponent } from './shared/site-banner/site-banner.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatTableModule} from '@angular/material/table';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
@@ -34,6 +39,18 @@ import { PanelDiscussionComponent } from './template-component/panel-discussion/
 import { NotificationComponent } from './template-component/notification/notification.component';
 import { EduAssistanceComponent } from './template-component/edu-assistance/edu-assistance.component';
 import { ScholarshipsComponent } from './template-component/scholarships/scholarships.component';
+import { StudentSubscriptionComponent } from './template-component/student-subscription/student-subscription.component';
+import { InstituteListComponent } from './template-component/institute-list/institute-list.component';
+import { InstituteDetailsComponent } from './template-component/institute-details/institute-details.component';
+import { ReferearnComponent } from './template-component/referearn/referearn.component';
+import { ProfileComponent } from './template-component/profile/profile.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -65,13 +82,31 @@ import { ScholarshipsComponent } from './template-component/scholarships/scholar
     PanelDiscussionComponent,
     NotificationComponent,
     EduAssistanceComponent,
-    ScholarshipsComponent
+    ScholarshipsComponent,
+    StudentSubscriptionComponent,
+    InstituteListComponent,
+    InstituteDetailsComponent,
+    InstituteConfirmationComponent,
+    ReferearnComponent,
+    ProfileComponent,
+    
+    
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

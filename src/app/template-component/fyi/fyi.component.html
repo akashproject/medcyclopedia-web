@@ -14,10 +14,10 @@
                     
                     <div class="portion">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <p>MBBS</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
                                       <input type="radio" name="radio" id="govt">
@@ -33,26 +33,32 @@
                                         PVT
                                       </label>
                                     </div>
-                                   
                                   </div>
                             </div>
                         </div>
                     </div>
                     <div class="portion">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <p>State</p>
                             </div>
-                            <div class="col-md-6">
-                                <input type="date" name="" id="">
+                            <div class="col-md-8">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Select State</mat-label>
+                                    <mat-select value="West bengal" matNativeControl required>
+                                        <mat-option value="West bengal"> West bengal </mat-option>
+                                        <mat-option value="Kerala">Kerala</mat-option>
+                                        <mat-option value="Karnataka">Karnataka</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
                             </div>
                         </div>
                     </div>
                     
                     <div class="portion">
                         <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6"><div class="button">search</div></div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8"><button mat-raised-button color="primary" routerLink="/fyc/fyi/institute-list">Search</button></div>
                         </div>
                     </div>
                     

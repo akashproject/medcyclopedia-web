@@ -1,0 +1,236 @@
+<div class="all_pages">
+    <div class="container">
+        <app-site-header></app-site-header>
+        <app-site-banner></app-site-banner>
+       
+        
+        <div class="all_detail_back">
+            <div class="all_layout ">
+               
+                <div class="column_area">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list">
+                                    <li>
+                                        <small>First Name</small>
+                                        <p>YES</p>
+                                    </li>
+                                    <li>
+                                        <small>Mobile Number</small>
+                                        <p>9836555023</p>
+                                    </li>
+                                    
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list">
+                                    <li>
+                                        <small>Last Name</small>
+                                        <p>Dutta</p>
+                                    </li>
+                                   
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list d-flex justify-content-end">
+                                    <li class="d-flex flex-column ">
+                                        <img src="assets/images/empty-avatar.png" alt="">
+                                        <button class="button" (click)="upload_photo()">Upload Photo</button>
+                                    </li>
+                                  
+                                    
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="all_detail_back">
+            <h1>Basic Profile</h1>
+            <form action="">
+                <div class="all_layout ">
+                    <div class="column_area" *ngIf="pro_content">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list">
+                                        <li>
+                                            <small>Home State</small>
+                                            <p>West Bengal</p>
+                                        </li>
+                                        <li>
+                                            <small>City</small>
+                                            <p>Kolkata</p>
+                                        </li>
+                                        <li>
+                                            <small>NEET Score</small>
+                                            <p>5%</p>
+                                        </li>
+                                        
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list">
+                                        <li>
+                                            <small>Gender</small>
+                                            <p>Male</p>
+                                        </li>
+                                        <li>
+                                            <small>Physically challenged</small>
+                                            <p>No</p>
+                                        </li>
+                                        
+                                       
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list d-flex flex-column justify-content-end ">
+                                        <li>
+                                            <small>Caste</small>
+                                            <p>General</p>
+                                        </li>
+                                        <li>
+                                            <small>Email</small>
+                                            <p>akashduttaphp@gmail.com</p>
+                                        </li>
+                                      
+                                        
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column_area" *ngIf="pro_content_edit">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list">
+                                        <li>
+                                            <small>Home State</small>
+                                            <div class="form-control">
+                                                <mat-select value="West bengal">
+                                                    <mat-option value="West bengal"> West bengal </mat-option>
+                                                    <mat-option value="Kerala">Kerala</mat-option>
+                                                    <mat-option value="Karnataka">Karnataka</mat-option>
+                                                </mat-select>
+                                            </div>
+                                            
+                                        </li>
+                                        <li>
+                                            <small>City</small>
+                                            <input type="text" name="" id="" value="Kolkata" class="form-control">
+                                        </li>
+                                        <li>
+                                            <small>NEET Score</small>
+                                            <input type="text" name="" id="" placeholder="Enter NEET Score " class="form-control">
+                                        </li>
+                                        
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list">
+                                        <li>
+                                            <small>Gender</small>
+                                            <div class="form-control">
+                                                <mat-select value="Male">
+                                                    <mat-option value="Male"> Male </mat-option>
+                                                    <mat-option value="Female">Female</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <small>Physically challenged</small>
+                                            <div class="form-control">
+                                                <mat-select value="No">
+                                                    <mat-option value="Yes"> Yes </mat-option>
+                                                    <mat-option value="No">No</mat-option>
+                                                </mat-select>
+                                            </div>
+                                            
+                                        </li>
+                                        
+                                       
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="portion">
+                                    <ul class="item_list d-flex flex-column justify-content-end ">
+                                        <li>
+                                            <small>Caste</small>
+                                            <div class="form-control">
+                                                <mat-select value="General">
+                                                    <mat-option value="General"> General </mat-option>
+                                                    <mat-option value="OBC">OBC</mat-option>
+                                                    <mat-option value="SC">SC</mat-option>
+                                                    <mat-option value="ST">ST</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <small>Email</small>
+                                            <input type="email" name="" id="" value="akashduttaphp@gmail.com" class="form-control">
+                                        </li>
+                                      
+                                        
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button edit" (click)="edit_content()" *ngIf="edit_button">Edit</div>
+                    <div class="buttons d-flex align-items-center" *ngIf="save_buttons">
+                        <button mat-raised-button color="primary" (click)="save_content()" >Save</button>
+                        <button mat-raised-button (click)="cancle_content()">Cancle</button>
+                    </div>
+                    
+                    
+                </div>
+            </form>
+            
+            
+        </div>
+
+        
+    </div>
+    
+</div>
+
+<div class="popup" *ngIf="pop">
+    <div class="back">
+        <h2>Upload Profile Image</h2>
+        <input type="file" name="" class="form-control" id="">
+        <div class="cropping_area d-flex align-items-center justify-content-center">
+            <h3>Cropping Area</h3>
+        </div>
+        <div class="buttons d-flex align-items-center">
+            <button mat-raised-button color="primary" (click)="add_photo()" >Add</button>
+            <button mat-raised-button (click)="cancle_photo()">Cancle</button>
+        </div>
+    </div>
+    
+  </div>
+

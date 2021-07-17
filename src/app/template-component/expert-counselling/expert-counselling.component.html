@@ -8,7 +8,7 @@
                 <img src="assets/images/e-c-p.jpg" alt="">
             </div>
             <div class="all_layout">
-                <h1>My Activity</h1>
+                <h1>Counselling</h1>
                 <p>by our Experts!</p>
                 <form action="">
                     <div class="portion">
@@ -17,7 +17,15 @@
                                 <p>Preferred date</p>
                             </div>
                             <div class="col-md-6">
-                                <input type="date" name="" id="">
+                              <mat-form-field appearance="fill">
+                                <mat-label>Enter a date range</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                  <input matStartDate placeholder="Start date">
+                                  <input matEndDate placeholder="End date">
+                                </mat-date-range-input>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+                              </mat-form-field>
                             </div>
                         </div>
                     </div>
@@ -111,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button">register now</div>
+                    <div class="button" routerLink="/student-subscription">register now</div>
                 </form>
             </div>
         </div>
