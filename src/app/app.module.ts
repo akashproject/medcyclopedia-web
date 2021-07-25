@@ -19,7 +19,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
@@ -50,8 +50,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 
 
-
-
+import { SocialLoginModule, SocialAuthServiceConfig,FacebookLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -91,9 +91,9 @@ import { AbroadInsListComponent } from './template-component/abroad-ins-list/abr
     ReferearnComponent,
     ProfileComponent,
     AbroadInsListComponent,
-    
-    
-  
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -108,9 +108,32 @@ import { AbroadInsListComponent } from './template-component/abroad-ins-list/abr
     MatButtonModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatDatepickerModule
+    HttpClientModule,
+    MatDatepickerModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '365880875534-sigjn0i550f2a91m6534an8s4pfbvqkj.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(
+              '247612683622366'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

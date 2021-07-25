@@ -11,7 +11,7 @@
             <h1>Find your institution</h1>
             <div class="all_layout d-flex align-items-center">
                 <form action="">
-                    
+
                     <div class="portion">
                         <div class="row">
                             <div class="col-md-4">
@@ -20,14 +20,14 @@
                             <div class="col-md-8">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="govt">
+                                      <input type="radio" name="radio" id="govt" value="Government" [(ngModel)]="readioSelected">
                                       <label for="govt" class=" d-flex align-center">
                                         <span></span>
                                         Govt
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="pvt">
+                                      <input type="radio" name="radio" id="pvt" value="Private" [(ngModel)]="readioSelected">
                                       <label for="pvt" class=" d-flex align-center">
                                         <span></span>
                                         PVT
@@ -45,27 +45,26 @@
                             <div class="col-md-8">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Select State</mat-label>
-                                    <mat-select value="West bengal" matNativeControl required>
-                                        <mat-option value="West bengal"> West bengal </mat-option>
-                                        <mat-option value="Kerala">Kerala</mat-option>
-                                        <mat-option value="Karnataka">Karnataka</mat-option>
+                                    <mat-select value="West bengal" matNativeControl required (selectionChange)="someMethod($event.value)">
+                                        <mat-option value="{{item.id}}" *ngFor="let item of states">{{item.state_name}} </mat-option>
+
                                     </mat-select>
                                 </mat-form-field>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="portion">
                         <div class="row">
                             <div class="col-md-4"></div>
-                            <div class="col-md-8"><button mat-raised-button color="primary" routerLink="/fyc/fyi/institute-list">Search</button></div>
+                            <div class="col-md-8"><button mat-raised-button color="primary" (click)="showContent()">Search</button></div>
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>

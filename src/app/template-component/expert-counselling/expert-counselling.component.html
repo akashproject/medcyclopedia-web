@@ -20,8 +20,8 @@
                               <mat-form-field appearance="fill">
                                 <mat-label>Enter a date range</mat-label>
                                 <mat-date-range-input [rangePicker]="picker">
-                                  <input matStartDate placeholder="Start date">
-                                  <input matEndDate placeholder="End date">
+                                  <input matStartDate placeholder="Start date" #dateRangeStart>
+                                  <input matEndDate placeholder="End date" #dateRangeEnd (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
                                 </mat-date-range-input>
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-date-range-picker #picker></mat-date-range-picker>
@@ -37,21 +37,21 @@
                             <div class="col-md-6">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="morning">
+                                      <input type="radio" name="time" id="morning" value="10am-1pm" [(ngModel)]="readioSelected">
                                       <label for="morning" class=" d-flex align-center">
                                         <span></span>
                                         10am-1pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="afternoon">
+                                      <input type="radio" name="time" id="afternoon" value="1pm-5pm" [(ngModel)]="readioSelected">
                                       <label for="afternoon" class=" d-flex align-center">
                                         <span></span>
                                         1pm-5pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="evening">
+                                      <input type="radio" name="time" value="1pm-5pm" id="evening" [(ngModel)]="readioSelected">
                                       <label for="evening" class=" d-flex align-center">
                                         <span></span>
                                         5pm-8pm
@@ -69,21 +69,21 @@
                             <div class="col-md-6">
                                 <div class="radio_back msg d-flex align-center">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="msg1">
+                                      <input type="radio" name="msg" id="msg1"  value="msg1" [(ngModel)]="readioSelected2">
                                       <label for="msg1" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg1.jpg" alt="">
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="msg2">
+                                      <input type="radio"  id="msg2" value="msg2" name="msg" [(ngModel)]="readioSelected2">
                                       <label for="msg2" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg3.svg" alt="">
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="msg3">
+                                      <input type="radio"  id="msg3" value="msg3" name="msg" [(ngModel)]="readioSelected2">
                                       <label for="msg3" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg.svg" alt="">
@@ -102,14 +102,14 @@
                             <div class="col-md-6">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="english">
+                                      <input type="radio" name="lang" id="english" value="english" [(ngModel)]="readioSelected3">
                                       <label for="english" class=" d-flex align-center">
                                         <span></span>
                                         English
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="radio" id="hindi">
+                                      <input type="radio" name="lang" id="hindi" value="hindi" [(ngModel)]="readioSelected3">
                                       <label for="hindi" class=" d-flex align-center">
                                         <span></span>
                                         Hindi
@@ -119,10 +119,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button" routerLink="/student-subscription">register now</div>
+                    <div class="button" (click)="createRzpayOrder()">register now</div>
                 </form>
             </div>
         </div>
     </div>
-    
+
 </div>
