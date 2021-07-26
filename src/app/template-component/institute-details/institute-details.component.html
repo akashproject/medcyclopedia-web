@@ -9,14 +9,14 @@
             <li><a routerLink="/fyc/fyi/institute-list">List of institutes</a></li>
             <li>Institutes details</li>
         </ul>
-        
+
         <div class="all_detail_back details_page">
             <div class="all_layout ">
                <div class="head">
                    <div class="image_back">
                        <img src="assets/images/il1.png" alt="">
-                       Bangalore Medical College and Research Institute, Bangalore
-                       <p>N/A</p>
+                       {{data.title}}
+                       <p>{{data.shortname}}</p>
                    </div>
                    <div class="heart d-flex align-items-center">
                     <span class="fa fa-thumbs-up"></span>
@@ -29,25 +29,25 @@
                            <div class="left_details">
                                <div class="portion">
                                    <small>Description</small>
-                                   <p>The DSR Dist. Headquarters Hospital, Nellore was built in 1963 to 1968. Foundation Stone laid by the Honourable Chief Minister of Andhra Pradesh Sri Neelam Sanjeeva Reddy. Inaugurated on 18/12/1968 by the Chief Minister of Karnataka Sri.Veerendra Patil and preceded by the Honourable Chief Minister of Andhra Pradesh, Sri. Kasu Brahmanada Reddy. In 2013 this District head Quarters Hospital upgraded and converted into Medical College & Teaching Hospital by Hon’ble Chief Minister of Andhra Pradesh Sri. Nallari Kiran Kumar Reddy. The college building was completed in 2014 and inaugurated on 19-07-2004 by Sri Nara Chandra Babu Naidu garu. The 1st batch of admissions was permitted in 2014 with intake of 150 seats and students were admitted in August 2014.</p>
-                               </div>
+                                    <p>{{data.description}}</p>
+                                  </div>
                                <div class="portion">
                                    <ul class="item_list justify-content-between d-flex align-items-center ">
                                        <li>
                                            <small>Ownership Type</small>
-                                           <p>Goverment</p>
+                                           <p>{{data.ownership_type}}</p>
                                        </li>
                                        <li>
                                             <small>City</small>
-                                            <p>Nellore</p>
+                                            <p>{{data.city}}</p>
                                         </li>
                                         <li>
                                             <small>Year of inception</small>
-                                            <p>2014</p>
+                                            <p>{{data.year_of_inception}}</p>
                                         </li>
                                         <li>
                                             <small>State</small>
-                                            <p>Andhra Pradesh</p>
+                                            <p>{{data.state_id}}</p>
                                         </li>
                                    </ul>
                                </div>
@@ -55,18 +55,18 @@
                                     <ul class="item_list">
                                         <li>
                                             <small>Complete Address </small>
-                                            <p>Dargamitta, Nellore, SPSR Nellore (Distt.),Pin-524004 Andhra Pradesh </p>
+                                            <p>{{data.address}} </p>
                                         </li>
-                                    
+
                                     </ul>
                                 </div>
                                 <div class="portion">
                                     <ul class="item_list">
                                         <li>
                                             <small>How to reach</small>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quaerat laboriosam asperiores fugiat ad atque velit veniam nam sunt, hic illum consequuntur veritatis odit praesentium reiciendis aliquid, quia at. Maiores.</p>
+                                            <p>{{data.how_to_reach}}</p>
                                         </li>
-                                    
+
                                     </ul>
                                 </div>
                                 <div class="portion">
@@ -75,7 +75,7 @@
                                             <small>News Articles</small>
                                             <p>N/A</p>
                                         </li>
-                                    
+
                                     </ul>
                                 </div>
                                 <div class="portion">
@@ -86,10 +86,10 @@
 
                                             </p>
                                         </li>
-                                    
+
                                     </ul>
                                 </div>
-                                
+
                            </div>
                        </div>
                        <div class="col-lg-4">
@@ -101,13 +101,14 @@
                                         <small>Affiliated To </small>
                                         <p>NTR University of Health Sciences, Vijayawada</p>
                                     </li>
-                                    
-                                
+
+
                                 </ul>
                            </div>
                        </div>
                    </div>
                    <div class="column_area">
+<<<<<<< HEAD
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="portion">
@@ -174,13 +175,80 @@
                                     
                                     </ul>
                                 </div>
+=======
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list">
+                                    <li>
+                                        <small>Scholarship</small>
+                                        <p>{{data.scholarships}}</p>
+                                    </li>
+                                    <li>
+                                        <small>Email</small>
+                                        <p><a href="">{{data.admin_email}}</a></p>
+                                    </li>
+                                    <li>
+                                        <small>Food Availability</small>
+                                        <p>{{data.food_availablity}}</p>
+                                    </li>
+                                    <li>
+                                        <small>Wi-Fi Facility</small>
+                                        <p>{{data.wifi}}</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list">
+                                    <li>
+                                        <small>Accredited by</small>
+                                        <p>N/A</p>
+                                    </li>
+                                    <li>
+                                        <small>Website</small>
+                                        <p><a href="{{data.website}}">{{data.website}}</a></p>
+                                    </li>
+                                    <li>
+                                        <small>Hostel Facility</small>
+                                        <p>YES</p>
+                                    </li>
+                                    <li>
+                                        <small>Library Facility</small>
+                                        <p>{{data.library}}</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <ul class="item_list">
+                                    <li>
+                                        <small>Admin ranking</small>
+                                        <p>N/A</p>
+                                    </li>
+                                    <li>
+                                        <small>Contact numbers</small>
+                                        <p>{{data.contact_no}}</p>
+                                    </li>
+                                    <li>
+                                        <small>Placement Facility</small>
+                                        <p>{{data.placement}}</p>
+                                    </li>
+
+
+                                </ul>
+>>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
                             </div>
                         </div>
                     </div>
                </div>
-               
+
             </div>
-            
+
         </div>
 
         <div class="all_detail_back details_page second">
@@ -197,7 +265,7 @@
                         <p>Interested to get admission?</p>
                         <div class="button" routerLink="/fyc/fyi/institute-list/institute-details/institute-confirmation">Click Here</div>
                     </div>
-                    
+
                 </div>
                 <div class="right d-flex align-items-center justify-content-center">
                     <div class="d-flex flex-column align-items-center">
@@ -206,7 +274,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="all_detail_back details_page second" *ngIf="courses">
@@ -292,9 +360,9 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
-    
+
 </div>
 
 
@@ -305,7 +373,7 @@
             Click here to know latest and important notices http://www.aniims.org/notice.php
 
         </p>
-      
+
     </div>
-    
+
   </div>

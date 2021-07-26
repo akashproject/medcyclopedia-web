@@ -55,6 +55,23 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'fyc', component: FycComponent },
   { path: 'fyc/fyi', component: FyiComponent },
+  { path: 'fyc/fyi/institute-list', component: InstituteListComponent },
+  {
+    path: 'fyc/fyi/:id',
+   component: FyiComponent,
+    children: [{
+      path: 'fyc/fyi/:id',
+      component: FyiComponent
+    }]},
+
+    {
+      path: 'fyc/fyi/institute-list/:cid/:id/:lid',
+     component: InstituteListComponent,
+      children: [{
+        path: 'fyc/fyi/institute-list/:cid/:id/:lid',
+        component: InstituteListComponent
+      }]},
+
   { path: 'find-exam', component: FindExamComponent },
   { path: 'explore-exam', component: ExploreExamsComponent },
   { path: 'abroad', component: AbroadComponent },
@@ -63,9 +80,21 @@ const routes: Routes = [
   { path: 'notification', component: NotificationComponent },
   { path: 'edu-assistance', component: EduAssistanceComponent },
   { path: 'scholarships', component: ScholarshipsComponent },
-  { path: 'fyc/fyi/institute-list', component: InstituteListComponent },
+
+
+
+
   { path: 'fyc/fyi/abroad-ins-list', component: AbroadInsListComponent },
   { path: 'fyc/fyi/institute-list/institute-details', component: InstituteDetailsComponent },
+
+  {
+    path: 'fyc/fyi/institute-list/institute-details/:id',
+   component: InstituteDetailsComponent,
+    children: [{
+      path: 'fyc/fyi/institute-list/institute-details/:id',
+      component: InstituteDetailsComponent
+    }]},
+
   { path: 'fyc/fyi/institute-list/institute-details/institute-confirmation', component: InstituteConfirmationComponent },
   { path: 'rne', component: ReferearnComponent },
   { path: 'profile', component: ProfileComponent },

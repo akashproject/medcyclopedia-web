@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute,Router } from '@angular/router';
+import { InstitutesService } from 'src/app/all-services/institutes.service';
 @Component({
   selector: 'app-institute-details',
   templateUrl: './institute-details.component.html',
@@ -12,8 +13,9 @@ export class InstituteDetailsComponent implements OnInit {
   courses:boolean = false;
   noti:boolean = false;
   pgallery:boolean = false;
+  data:any
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,private router:Router,private insService:InstitutesService) { }
 
   popOpen(){
     this.pop = true;
@@ -38,6 +40,12 @@ export class InstituteDetailsComponent implements OnInit {
     this.pgallery = true;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    let ins_id = this.route.snapshot.paramMap.get('id');
+    this.insService.getInstitute(ins_id).subscribe(res=>{
+      this.data = res
+      console.log(res)
+    })
+  }
 
 }
