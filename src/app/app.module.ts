@@ -13,14 +13,15 @@ import { AboutUsBeforeLoginComponent } from './template-component/about-us-befor
 import { SiteHeaderComponent } from './shared/site-header/site-header.component';
 import { SiteBannerComponent } from './shared/site-banner/site-banner.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
 import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
+<<<<<<< HEAD
+=======
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+>>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
 import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.component';
@@ -44,14 +45,28 @@ import { InstituteListComponent } from './template-component/institute-list/inst
 import { InstituteDetailsComponent } from './template-component/institute-details/institute-details.component';
 import { ReferearnComponent } from './template-component/referearn/referearn.component';
 import { ProfileComponent } from './template-component/profile/profile.component';
+import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
+import { CompareComponent } from './template-component/compare/compare.component';
+
+
+
+<<<<<<< HEAD
+
+import {MatTableModule} from '@angular/material/table';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
+=======
 import { SocialLoginModule, SocialAuthServiceConfig,FacebookLoginProvider } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
+>>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
 
 @NgModule({
   declarations: [
@@ -91,9 +106,16 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     ReferearnComponent,
     ProfileComponent,
     AbroadInsListComponent,
+<<<<<<< HEAD
+    CompareComponent,
+    
+    
+  
+=======
 
 
 
+>>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
   ],
   imports: [
     BrowserModule,
@@ -108,6 +130,10 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     MatButtonModule,
     MatCheckboxModule,
     MatRadioModule,
+<<<<<<< HEAD
+    MatDatepickerModule,
+    MatExpansionModule
+=======
     HttpClientModule,
     MatDatepickerModule,
     SocialLoginModule
@@ -133,6 +159,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
         ]
       } as SocialAuthServiceConfig,
     }
+>>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
   ],
   bootstrap: [AppComponent]
 })

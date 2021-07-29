@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsBeforeLoginComponent } from './template-component/about-us-before-login/about-us-before-login.component';
 import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 import { AbroadComponent } from './template-component/abroad/abroad.component';
+import { CompareComponent } from './template-component/compare/compare.component';
 import { ConfirmUserComponent } from './template-component/confirm-user/confirm-user.component';
 import { CountryInfoComponent } from './template-component/country-info/country-info.component';
 import { EduAssistanceComponent } from './template-component/edu-assistance/edu-assistance.component';
@@ -128,6 +129,7 @@ const routes: Routes = [
   { path: 'fyc/fyi/institute-list/institute-details/institute-confirmation', component: InstituteConfirmationComponent },
   { path: 'rne', component: ReferearnComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'compare', component: CompareComponent },
 
 
 
