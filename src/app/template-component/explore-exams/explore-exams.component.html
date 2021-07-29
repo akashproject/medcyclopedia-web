@@ -23,34 +23,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>NEET UG-(MBBS)National Eligibility-cum-Entrance Test (Under Graduate Graduate) NEET-UG</td>
-                                    <td>NEET Exam : Aug 1, 2021</td>
+                                <tr *ngFor="let item of exams">
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.important_date_current_year}}</td>
                                     <td>
-                                        <button>View</button>
+                                        <a href="{{item.link}}">View</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>NEET UG-(MBBS)National Eligibility-cum-Entrance Test (Under Graduate Graduate) NEET-UG</td>
-                                    <td>NEET Exam : Aug 1, 2021</td>
-                                    <td>
-                                        <button>View</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>NEET UG-(MBBS)National Eligibility-cum-Entrance Test (Under Graduate Graduate) NEET-UG</td>
-                                    <td>NEET Exam : Aug 1, 2021</td>
-                                    <td>
-                                        <button>View</button>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </form>
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>

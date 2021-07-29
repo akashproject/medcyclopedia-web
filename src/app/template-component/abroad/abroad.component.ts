@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesService } from 'src/app/all-services/countries.service';
 
 @Component({
   selector: 'app-abroad',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AbroadComponent implements OnInit {
 
-  constructor() { }
+  countries:any;
+
+  constructor(private countryService:CountriesService) { }
 
   ngOnInit(): void {
+
+    this.countryService.getCountries().subscribe(res=>{
+      this.countries = res;
+      console.log(this.countries)
+    })
+
   }
 
 }

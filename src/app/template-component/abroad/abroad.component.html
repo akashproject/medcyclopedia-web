@@ -9,50 +9,11 @@
         </ul>
         <h1>Popular coutries for MBBS Abroad</h1>
         <div class="country_back">
-            <div class="port" routerLink="/country-info">
+            <div class="port" routerLink="/country-info/{{item.id}}" *ngFor="let item of countries">
                 <img src="assets/images/c1.png" alt="">
-                <p>Nepal</p>
+                <p>{{item.code}}</p>
             </div>
-            <div class="port">
-                <img src="assets/images/c2.png" alt="">
-                <p>Bangladesh</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c3.png" alt="">
-                <p>Philipines</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c4.png" alt="">
-                <p>China</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c5.png" alt="">
-                <p>USA</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c6.png" alt="">
-                <p>Russia</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c7.png" alt="">
-                <p>Ukrain</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c8.png" alt="">
-                <p>Poland</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c9.png" alt="">
-                <p>Guyana</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c10.png" alt="">
-                <p>Georgia</p>
-            </div>
-            <div class="port">
-                <img src="assets/images/c11.png" alt="">
-                <p>Kyrgyzstan</p>
-            </div>
+
         </div>
         <div class="all_detail_back">
             <div class="all_layout">
@@ -61,8 +22,8 @@
                <img src="assets/images/MBBS_ADMISSION_ABROAD_STEPS.jpg" alt="">
                <img src="assets/images/OUR_SERVICES.jpg" alt="">
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>

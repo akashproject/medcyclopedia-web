@@ -72,9 +72,30 @@ const routes: Routes = [
       }]},
 
   { path: 'find-exam', component: FindExamComponent },
+
+
+
+
   { path: 'explore-exam', component: ExploreExamsComponent },
+  {
+    path: 'explore-exam/:id',
+   component: ExploreExamsComponent,
+    children: [{
+      path: 'explore-exam/:id',
+      component: ExploreExamsComponent
+    }]},
   { path: 'abroad', component: AbroadComponent },
   { path: 'country-info', component: CountryInfoComponent },
+
+  {
+    path: 'country-info/:id',
+   component: CountryInfoComponent,
+    children: [{
+      path: 'country-info/:id',
+      component: CountryInfoComponent
+    }]},
+
+
   { path: 'panel-discussion', component: PanelDiscussionComponent },
   { path: 'notification', component: NotificationComponent },
   { path: 'edu-assistance', component: EduAssistanceComponent },
@@ -84,6 +105,16 @@ const routes: Routes = [
 
 
   { path: 'fyc/fyi/abroad-ins-list', component: AbroadInsListComponent },
+
+  {
+    path: 'fyc/fyi/abroad-ins-list/:id',
+   component: AbroadInsListComponent,
+    children: [{
+      path: 'fyc/fyi/abroad-ins-list/:id',
+      component: AbroadInsListComponent
+    }]},
+
+
   { path: 'fyc/fyi/institute-list/institute-details', component: InstituteDetailsComponent },
 
   {

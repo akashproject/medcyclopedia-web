@@ -18,4 +18,10 @@ export class InstitutesService {
     return this.http.get(url);
   }
 
+  getInstritueByCountry(coun_id:any){
+    let url = `${environment.apiUrl}/institutes-countrywise/`+coun_id;
+    return this.http.get(url);
+
+  }
+
 }
