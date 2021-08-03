@@ -10,8 +10,7 @@
             <h1>Find your institute according to the course</h1>
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
-                    <div class="wrap" routerLink="/fyc/fyi/{{item.id}}" *ngFor="let item of courses"><img src="assets/images/fy1.png" alt=""></div>
-
+                    <div class="wrap" routerLink="/fyc/fyi/{{item.id}}" *ngFor="let item of courses"><img src="assets/images/{{item.course_name}}.png" alt=""></div>
                 </div>
                 <div class="right d-flex align-items-center justify-content-center">
                     <div class="d-flex flex-column align-items-center">
@@ -25,4 +24,3 @@
     </div>
 
 </div>
-

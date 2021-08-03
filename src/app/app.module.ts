@@ -15,13 +15,6 @@ import { SiteBannerComponent } from './shared/site-banner/site-banner.component'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
-<<<<<<< HEAD
-=======
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
->>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
 import { MyAlertsComponent } from './template-component/my-alerts/my-alerts.component';
@@ -47,10 +40,9 @@ import { ReferearnComponent } from './template-component/referearn/referearn.com
 import { ProfileComponent } from './template-component/profile/profile.component';
 import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 import { CompareComponent } from './template-component/compare/compare.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
-
-<<<<<<< HEAD
 
 import {MatTableModule} from '@angular/material/table';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -63,10 +55,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 
-=======
-import { SocialLoginModule, SocialAuthServiceConfig,FacebookLoginProvider } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
->>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
 
 @NgModule({
   declarations: [
@@ -106,19 +94,14 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     ReferearnComponent,
     ProfileComponent,
     AbroadInsListComponent,
-<<<<<<< HEAD
     CompareComponent,
     
     
   
-=======
-
-
-
->>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatIconModule,
@@ -130,36 +113,8 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     MatButtonModule,
     MatCheckboxModule,
     MatRadioModule,
-<<<<<<< HEAD
     MatDatepickerModule,
     MatExpansionModule
-=======
-    HttpClientModule,
-    MatDatepickerModule,
-    SocialLoginModule
-  ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '365880875534-sigjn0i550f2a91m6534an8s4pfbvqkj.apps.googleusercontent.com'
-            )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider(
-              '247612683622366'
-            )
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
->>>>>>> 8f8a8937cd01d756ed0d91e2194ff4cdb3cb19f9
   ],
   bootstrap: [AppComponent]
 })
