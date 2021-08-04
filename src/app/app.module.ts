@@ -55,8 +55,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 
@@ -125,8 +123,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatDatepickerModule,
     MatExpansionModule,
     StorageServiceModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
     MatSnackBarModule
 
   ],
