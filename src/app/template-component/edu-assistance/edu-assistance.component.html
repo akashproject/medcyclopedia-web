@@ -6,15 +6,15 @@
             <h1>Education Loan Assistance</h1>
 
             <div class="cards_back">
-                <div class="row">
+                <div class="row" *ngFor="let bank of allbanks">
                     <div class="col-lg-4">
                         <div class="portion">
-                            <h2>Axis Bank</h2>
-                            <img src="assets/images/b1.png" alt="">
-                            <p><a href="">CLICK HERE TO VIEW</a></p>
+                            <h2>{{ bank.bank_name}}</h2>
+                            <img src="assets/images/{{ bank.bank_name}}.png" alt="">
+                            <p (click)="popOpen(bank)">CLICK HERE TO VIEW</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <div class="portion">
                             <h2>Bank of Baroda</h2>
                             <img src="assets/images/b2.png" alt="">
@@ -76,13 +76,34 @@
                             <img src="assets/images/b10" alt="">
                             <p><a href="">CLICK HERE TO VIEW</a></p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
         </div>
 
+        <div class="popup" *ngIf="pop">
+            <div class="back">
+                <!-- <icon name="close-outline" onclick="popClose()"></icon> -->
+                <div class="area">
+                    <img src="assets/images/{{bankdetails?.bank_name}}.png" alt="">
+                    <h2>{{ bankdetails?.bank_name }}</h2>
+                </div>
+                <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste veniam, quia excepturi quas, optio voluptas
+                eligendi accusantium</p> -->
+                <h3>Name :</h3>
+                <h4>{{ bankdetails?.contact_name }}</h4>
+                <br>
+                <h3>Contact :</h3>
+                <h4>{{ bankdetails?.contact_number}}</h4>
+                <div class="del">
+                    <span>Description</span>
+                    <!-- <a href="">CLICK HERE TO VIEW</a> -->
+                    <p>{{ bankdetails?.description }}</p>
+                </div>
+            </div>
 
+        </div>
 
 
 

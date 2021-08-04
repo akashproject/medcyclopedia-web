@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BankService } from 'src/app/all-services/bank.service';
 
 @Component({
   selector: 'app-edu-assistance',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EduAssistanceComponent implements OnInit {
 
-  constructor() { }
+
+  allbanks : any = [];
+  bankdetails : any = [];
+
+  pop:boolean = false;
+
+  popOpen(bank : any){
+    console.log(bank);
+    this.bankdetails = bank;
+    this.pop = true;
+  }
+  popClose(){
+    this.pop = false;
+  }
+
+  constructor(private bankservice : BankService) { }
 
   ngOnInit(): void {
+
+    this.bankservice.getBanks().subscribe((res) =>{
+      console.log(res);
+      this.allbanks = res;
+    })
+
   }
 
 }

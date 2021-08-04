@@ -13,7 +13,7 @@ import { AboutUsBeforeLoginComponent } from './template-component/about-us-befor
 import { SiteHeaderComponent } from './shared/site-header/site-header.component';
 import { SiteBannerComponent } from './shared/site-banner/site-banner.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InstituteConfirmationComponent } from './template-component/institute-confirmation/institute-confirmation.component';
 import { MyInstitutesComponent } from './template-component/my-institutes/my-institutes.component';
 import { MyActivitiesComponent } from './template-component/my-activities/my-activities.component';
@@ -44,15 +44,24 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 
-import {MatTableModule} from '@angular/material/table';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionModule } from '@angular/material/expansion';
+
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
+
+
+
 
 
 
@@ -95,9 +104,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ProfileComponent,
     AbroadInsListComponent,
     CompareComponent,
-    
-    
-  
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -114,7 +123,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCheckboxModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    StorageServiceModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    MatSnackBarModule
+
   ],
   bootstrap: [AppComponent]
 })
