@@ -9,9 +9,9 @@
         </ul>
         <h1>Popular coutries for MBBS Abroad</h1>
         <div class="country_back">
-            <div class="port" routerLink="/country-info/{{item.id}}" *ngFor="let item of countries">
+            <div class="port" *ngFor="let item of countries" (click)="getCountryId(item.id)">
                 <img src="assets/images/c1.png" alt="">
-                <p>{{item.code}}</p>
+                <p>{{item.name }}</p>
             </div>
 
         </div>

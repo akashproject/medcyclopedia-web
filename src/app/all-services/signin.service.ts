@@ -28,14 +28,15 @@ export class SigninService {
   }
 
   getCurrentUser() {
+    // setTimeout(() => {
+    //   localStorage.removeItem(this.JWT_KEY);
+    // }, 1000);
     return this.storage.get(this.JWT_KEY) || null;
   }
 
   logout(){
     localStorage.removeItem(this.JWT_KEY);
     this.user.next(null);
-
-
   }
 
   setToken(data : any){

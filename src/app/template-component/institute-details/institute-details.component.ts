@@ -13,7 +13,7 @@ export class InstituteDetailsComponent implements OnInit {
   courses:boolean = false;
   noti:boolean = false;
   pgallery:boolean = false;
-  data:any
+  data:any = [];
 
   constructor(private route: ActivatedRoute,private router:Router,private insService:InstitutesService) { }
 

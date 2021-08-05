@@ -6,16 +6,16 @@
             <h1>News and Events</h1>
 
             <div class="cards_back">
-                <div class="row">
+                <div class="row" *ngFor="let ne of news_events">
                     <div class="col-lg-4">
                         <div class="portion">
                             <img src="assets/images/e1" alt="">
-                            <p>The Supreme Court has ruled that NRI seats in private medical colleges should not be kept vacant or transferred for other quo... <a href="">CLICK HERE TO VIEW</a></p>
+                            <p>{{ne.title}}<a href="{{ ne.description }}">CLICK HERE TO VIEW</a></p>
                             
                         </div>
                     </div>
                     
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <div class="portion">
                             <img src="assets/images/e2.webp" alt="">
                             <p>MCC Lists Disability Centres To Issue Certificates To PWD Candidates <a href="">CLICK HERE TO VIEW</a></p>
@@ -42,7 +42,7 @@
                             <p>NEET 2020 Not Necessary For MBBS Abroad, Applicants Can Appear In 2021: MCI Order <a href="">CLICK HERE TO VIEW</a></p>
                             
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             

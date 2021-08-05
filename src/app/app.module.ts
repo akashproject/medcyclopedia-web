@@ -56,6 +56,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SpinnerComponent } from './template-component/spinner/spinner.component';
+import { SpinnerService } from './all-services/spinner.service';
+
 
 
 
@@ -102,6 +106,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     ProfileComponent,
     AbroadInsListComponent,
     CompareComponent,
+    SpinnerComponent,
 
 
 
@@ -123,9 +128,11 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatDatepickerModule,
     MatExpansionModule,
     StorageServiceModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
 
   ],
+  providers: [SpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

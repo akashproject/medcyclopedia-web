@@ -20,6 +20,7 @@ export class AbroadInsListComponent implements OnInit {
 
     this.insService.getInstritueByCountry(id).subscribe(res=>{
 
+      console.log(res);
       this.instritutes = res;
 
     })

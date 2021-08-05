@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SigninService } from 'src/app/all-services/signin.service';
 import { SnackbarService } from 'src/app/all-services/snackbar.service';
 import { StatesService } from 'src/app/all-services/states.service';
@@ -38,7 +39,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(private signinservice: SigninService,
     private stateservice: StatesService,
-    private snackbarservice: SnackbarService) {
+    private snackbarservice: SnackbarService,
+    private router: Router) {
 
   }
 
@@ -81,42 +83,55 @@ export class ProfileComponent implements OnInit {
 
     console.log(this.token_data);
 
-    this.token = this.token_data.access_token;
+    if (this.token_data !== null) {
+      this.token = this.token_data.access_token;
 
-    this.signinservice.getUserData(this.token).subscribe((res: any) => {
 
-      console.log(res);
-      this.user_data = res;
 
-      this.name = this.user_data.name;
+      // this.token = this.token_data.access_token;
 
-      if (this.user_data) {
-        if (this.name !== undefined) {
-          this.first_name = this.name.split(" ")[0];
-          this.last_name = this.name.split(" ")[1];
+      this.signinservice.getUserData(this.token).subscribe((res: any) => {
+
+
+        console.log(res);
+        this.user_data = res;
+
+        if (JSON.stringify(this.user_data) === '{}') {
+          this.signinservice.logout();
+          this.router.navigate(['/login']);
         }
 
+        this.name = this.user_data.name;
 
-        this.mobile = this.user_data.mobile;
-        this.home_state = this.user_data.state;
-        this.city = this.user_data.city;
-        this.gender = this.user_data.gender;
-        this.cast = this.user_data.cast;
-        this.physical_status = this.user_data.physical_status;
-        this.email = this.user_data.email;
-        this.score = this.user_data.score;
-      }
+        if (this.user_data) {
+          if (this.name !== undefined) {
+            this.first_name = this.name.split(" ")[0];
+            this.last_name = this.name.split(" ")[1];
+          }
 
-    }, (err :any) =>{
-      console.log(err);
-      this.snackbarservice.openSnackBarWithTime('Profile not saved','close');
-    })
 
-    this.stateservice.getStates().subscribe((data: any) => {
-      console.log(data);
-      this.states = data;
+          this.mobile = this.user_data.mobile;
+          this.home_state = this.user_data.state;
+          this.city = this.user_data.city;
+          this.gender = this.user_data.gender;
+          this.cast = this.user_data.cast;
+          this.physical_status = this.user_data.physical_status;
+          this.email = this.user_data.email;
+          this.score = this.user_data.score;
+        }
 
-    })
+      }, (err: any) => {
+        console.log(err);
+
+        this.snackbarservice.openSnackBarWithTime('Profile loading error', 'close');
+      })
+
+      this.stateservice.getStates().subscribe((data: any) => {
+        console.log(data);
+        this.states = data;
+
+      })
+    }
 
   }
 
@@ -145,7 +160,7 @@ export class ProfileComponent implements OnInit {
       err => {
         err = err
         console.log(err);
-        // this.displayToastFailure();
+        this.snackbarservice.openSnackBarWithTime('Profile not saved', 'close')
       });
 
 

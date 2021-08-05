@@ -7,15 +7,15 @@
 
             <div class="cards_back">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" *ngFor="let scholarship of scholarships">
                         <div class="portion">
                             <img src="assets/images/sc1.png" alt="">
-                            <p>All India Pre-medical Scholarship Test
-                                <a href="">CLICK HERE TO VIEW</a></p>
+                            <p>{{ scholarship?.title}}
+                                <a href="{{ scholarship?.description }}">CLICK HERE TO VIEW</a></p>
                             
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <div class="portion">
                             <img src="assets/images/sc2" alt="">
                             <p>All India Youth Scholarship Entrance Examination (AIYSEE)<a href="">CLICK HERE TO VIEW</a></p>
@@ -112,7 +112,7 @@
                             <p>Vijayalakshmi R.L. Jalappa Scholarship<a href="">CLICK HERE TO VIEW</a></p>
                             
                         </div>
-                    </div>
+                    </div> -->
                     
                   
                 </div>

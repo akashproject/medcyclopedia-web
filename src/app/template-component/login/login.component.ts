@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
   phone: string = "";
   password: string = "";
   token_data: any;
+  access_token: any = "";
   token: string | undefined;
+
+
   //socialUser: SocialUser | undefined;
   isLoggedin: boolean | undefined;
 
@@ -35,6 +38,34 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.access_token = this.signinservice.getCurrentUser();
+
+    console.log(this.access_token);
+
+    if (this.access_token !== null) {
+      this.signinservice.getUserData(this.access_token.access_token).subscribe((res: any) => {
+
+        console.log(res);
+        this.token_data = res;
+
+        if (JSON.stringify(this.token_data) !== '{}') {
+          this.router.navigate(['/home']);
+
+        } else {
+          this.signinservice.logout();
+        }
+
+      }, (err: any) => {
+        console.log(err);
+        this.snackmatservice.openSnackBarWithTime('Please login', 'close');
+      });
+    }
+
+
+
+
+
 
 
 
@@ -70,16 +101,16 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/home']);
 
-    },(err : any) => {
+    }, (err: any) => {
       // err = err
       console.log(err);
       // this.displayToastFailure();
       this.snackmatservice.openSnackBarWithTime("Mobile or password is incorrect!", 'close');
     });
-    
+
   }
 
-  
+
 
 }
 
