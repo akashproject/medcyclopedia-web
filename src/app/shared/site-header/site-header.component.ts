@@ -17,7 +17,7 @@ export class SiteHeaderComponent implements OnInit {
   user_data: any = [];
   first_name: string = "";
   full_name: string = "";
-  showSpinner: boolean = false;
+  // showSpinner: boolean = false;
 
   constructor(private signinservice: SigninService,
     private snackbarservice: SnackbarService,
@@ -33,8 +33,8 @@ export class SiteHeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.spinnerservice.show();
-    this.showSpinner = true;
+    
+    // this.showSpinner = true;
     this.token_data = this.signinservice.getCurrentUser();
 
     console.log(this.token_data);
@@ -49,6 +49,8 @@ export class SiteHeaderComponent implements OnInit {
       this.signinservice.getUserData(this.token).subscribe((res: any) => {
 
         console.log(res);
+        // this.showSpinner = false;
+
         this.user_data = res;
 
         if (JSON.stringify(this.user_data) === '{}') {

@@ -66,4 +66,21 @@ export class SigninService {
       {name: name, mobile:mobile, homestate:homestate, gender : gender, cast: cast, city:city, physical_status:physical_status, email:email, score:neet}, {headers: headers});
 
   }
+
+  // signup methods --
+
+  sendotp(mobile : string){
+
+    console.log(mobile);
+    return this.http.post(`${environment.apiUrl}/send-otp`, {mobile : mobile});
+  }
+  
+  registerUser(name:string, mobile:string, password:string, email:string) {
+
+    return this.http.post(`${environment.apiUrl}/signup`, { name: name, mobile: mobile, password: password, email: email }).pipe(
+      map(data => {
+        this.storage.set(this.JWT_KEY, data);
+      })
+    );
+  }
 }

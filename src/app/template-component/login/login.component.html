@@ -12,11 +12,25 @@
                     <label for="phone">Enter Valid Phone No</label>
                     <input type="text" [(ngModel)]="phone" formControlName="phone" id="phone">
                 </div>
+                <div *ngIf="errorControl.phone.touched && errorControl.phone.invalid">
+                    <span style="color: red;" *ngIf="errorControl.phone.errors.pattern">
+                      Mobile is not in proper format.
+                    </span>
+                    <span style="color: red;" *ngIf="errorControl.phone.errors.required">
+                      Mobile is required.
+                    </span>
+                  </div>
+
                 <div class="portion">
                     <label for="">Enter Password</label>
                     <input type="password"  id="password" [(ngModel)]="password" formControlName="password">
                 </div>
-                <button type="submit">Login</button>
+                <div *ngIf="errorControl.password.touched && errorControl.password.invalid">
+                    <span style="color: red;" *ngIf="errorControl.password.errors.required">
+                      Password is required.
+                    </span>
+                  </div>
+                <button type="submit" [disabled]="!signinForm.valid">Login</button>
                 <span routerLink="/sign-up">first time here?</span>
                 <p>Forgot Password? Retrive <span routerLink="/forgot-pass">Here.</span></p>
                 <div>

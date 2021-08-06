@@ -33,7 +33,6 @@ export class AbroadComponent implements OnInit {
     }
 
   }
-
   getCountryId(country_id: string) {
 
     this.router.navigate(['/country-info/' + country_id], { state: { country_id: country_id } })

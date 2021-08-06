@@ -4,37 +4,93 @@
     </div>
     <div class="log_in_back d-flex justify-content-center">
         <h4 routerLink="/aboutus">ABOUT US</h4>
-         <div>
-             <h2>Sign UP</h2>
-             <div class="step">Step 1/2</div>
-             <form action="" class="register">
-                 <div class="portion">
-                     <label for="">First Name</label>
-                     <input type="text" name="" id="">
-                 </div>
-                 <div class="portion">
-                     <label for="">Last Name</label>
-                     <input type="text" name="" id="">
-                 </div>
-                 <div class="portion">
-                     <label for="hone">Mobile</label>
-                     <input type="text" name="" id="">
-                 </div>
-                 <div class="portion">
-                     <label for="">Create Password</label>
-                     <input type="password" name="" id="">
-                 </div>
-                 <div class="portion">
-                     <label for="">Confirm Password</label>
-                     <input type="password" name="" id="">
-                 </div>
-                 <div class="portion">
-                     <label for="hone">Referral Code (If any)</label>
-                     <input type="text" name="" id="">
-                 </div>
-                 <button routerLink="/confirm-user">Next</button>
-                 <span routerLink="/login">Existing user?</span>
-             </form>
-         </div>
+        <div>
+            <h2>Sign UP</h2>
+            <div class="step">Step 1/2</div>
+            <form action="" class="register" [formGroup]="signupForm" (ngSubmit)="sendotp()">
+                <div class="portion">
+                    <label for="">First Name</label>
+                    <input type="text" id="first_name" formControlName="first_name" [(ngModel)]="first_name">
+                </div>
+                <div *ngIf="errorControl.first_name.touched && errorControl.first_name.invalid">
+                    <span style="color: red;" *ngIf="errorControl.first_name.errors.minlength">
+                        This First Name is not allowed.
+                    </span>
+                    <span style="color: red;" *ngIf="errorControl.first_name.errors.required">
+                        First name is required.
+                    </span>
+                </div>
+                <div class="portion">
+                    <label for="">Last Name</label>
+                    <input type="text" id="last_name" formControlName="last_name" [(ngModel)]="last_name">
+                </div>
+                <div *ngIf="errorControl.last_name.touched && errorControl.last_name.invalid">
+                    <span style="color: red;" *ngIf="errorControl.last_name.errors.minlength">
+                        This Last Name is not allowed.
+                    </span>
+                    <span style="color: red;" *ngIf="errorControl.last_name.errors.required">
+                        Last name is required.
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <label for="hone">Email</label>
+                    <input type="text" formControlName="email" id="email" [(ngModel)]="email">
+                </div>
+                <div *ngIf="errorControl.email.touched && errorControl.email.invalid">
+                    <span style="color: red;" *ngIf="errorControl.email.errors.required">
+                        Email is required.
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <label for="hone">Mobile</label>
+                    <input type="text" formControlName="mobile" id="mobile" [(ngModel)]="mobile">
+                </div>
+                <div *ngIf="errorControl.mobile.touched && errorControl.mobile.invalid">
+
+                    <span style="color: red;" *ngIf="errorControl.mobile.errors.required">
+                        Mobile is required.
+                    </span>
+                    <span style="color: red;" *ngIf="errorControl.mobile.errors.pattern">
+                        Mobile is not in format.
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <label for="">Create Password</label>
+                    <input type="password" id="password" formControlName="password" [(ngModel)]="password">
+                </div>
+                <div *ngIf="errorControl.password.touched && errorControl.password.invalid">
+
+                    <span style="color: red;" *ngIf="errorControl.password.errors.required">
+                        Password is required.
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <label for="">Confirm Password</label>
+                    <input type="password" id="cpassword" formControlName="cpassword" [(ngModel)]="cpassword">
+                </div>
+                <div *ngIf="errorControl.cpassword.touched && confirmPassword()">
+                    <span style=" color: red;">
+                        Password did not match
+                    </span>
+                </div>
+                <div *ngIf="errorControl.cpassword.touched && errorControl.cpassword.invalid">
+
+                    <span style="color: red;" *ngIf="errorControl.cpassword.required">
+                        Please provide your password
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <label for="hone">Referral Code (If any)</label>
+                    <input type="text" id="referral" formControlName="referral" [(ngModel)]="referral">
+                </div>
+                <button type="submit" [disabled]="!signupForm?.valid">Next</button>
+                <span routerLink="/login">Existing user?</span>
+            </form>
+        </div>
     </div>
 </div>

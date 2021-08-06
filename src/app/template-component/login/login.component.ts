@@ -110,6 +110,13 @@ export class LoginComponent implements OnInit {
 
   }
 
+  get errorControl(): any {
+    if (this.signinForm !== undefined) {
+      return this.signinForm.controls;
+
+    }
+  }
+
 
 
 }
