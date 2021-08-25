@@ -10,7 +10,7 @@
             <h1>Find the entrance/eligibility examination according to the course</h1>
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
-                    <div class="wrap" routerLink="/explore-exam/{{item.id}}" *ngFor="let item of courses"><img src="assets/images/{{item.course_name}}.png" alt=""></div>
+                    <div class="wrap" routerLink="/explore-exam/{{item.id}}" *ngFor="let item of courses"><img src="{{uploadsUrl}}/{{item.icon}}" onerror="this.src = 'assets/images/no-image.png';"></div>
 
                 </div>
                 <div class="right d-flex align-items-center justify-content-center">

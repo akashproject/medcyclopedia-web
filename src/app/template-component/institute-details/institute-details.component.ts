@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { InstitutesService } from 'src/app/all-services/institutes.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-institute-details',
   templateUrl: './institute-details.component.html',
@@ -14,8 +15,12 @@ export class InstituteDetailsComponent implements OnInit {
   noti:boolean = false;
   pgallery:boolean = false;
   data:any = [];
+  uploadsUrl: any;
 
-  constructor(private route: ActivatedRoute,private router:Router,private insService:InstitutesService) { }
+  constructor(private route: ActivatedRoute,private router:Router,private insService:InstitutesService) {
+    this.uploadsUrl = environment.uploadsUrl;
+
+   }
 
   popOpen(){
     this.pop = true;

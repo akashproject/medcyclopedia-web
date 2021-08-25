@@ -22,7 +22,8 @@ export class SiteHeaderComponent implements OnInit {
   constructor(private signinservice: SigninService,
     private snackbarservice: SnackbarService,
     private router: Router,
-    private spinnerservice: SpinnerService) { }
+    public spinnerservice: SpinnerService
+    ) { }
 
   menuopen() {
     this.menu = !this.menu;

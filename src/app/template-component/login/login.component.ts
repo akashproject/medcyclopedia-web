@@ -1,10 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 //import { SocialAuthService, GoogleLoginProvider, SocialUser,FacebookLoginProvider } from 'angularx-social-login';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SigninService } from 'src/app/all-services/signin.service';
-import { ToastrService } from 'ngx-toastr';
 import { SnackbarService } from 'src/app/all-services/snackbar.service';
 
 @Component({

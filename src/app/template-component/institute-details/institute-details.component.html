@@ -14,11 +14,11 @@
             <div class="all_layout ">
                 <div class="head">
                     <div class="image_back">
-                        <img src="assets/images/il1.png" alt=""> {{data.title}}
+                        <img src="{{uploadsUrl}}/{{data.logo}}" onerror="this.src = 'assets/images/no-image.png';"> {{data.title}}
                         <p>{{data.shortname}}</p>
                     </div>
                     <div class="heart d-flex align-items-center">
-                        <span class="fa fa-thumbs-up"></span>
+                        {{data.likecount}}<span class="fa fa-thumbs-up"></span>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@
                                     <ul class="item_list">
                                         <li>
                                             <small>News Articles</small>
-                                            <p>N/A</p>
+                                            <p>{{data.news_article}}</p>
                                         </li>
 
                                     </ul>
@@ -81,9 +81,8 @@
                                     <ul class="item_list">
                                         <li>
                                             <small>Reviews</small>
-                                            <p>MOUNIKA SANGAM MBBSPURSUED BATCH : 2023 A very good and lovely college.Our college is known for the teachers.All the teachers are helpful and very supportive.I have seen they also help the students during he
-                                                time of Internships and guide us properly. ANJALI J THOMAS MBBSBATCH : 2014 For getting admission in the MBBS course, the first thing for every student is to clear the entrance examination known as NEET.To
-                                                appear in NEET UG the students must passed out 10+2 examination with minimum50% of marks.
+                                            <p>
+                                                {{data.reviews}}
 
                                             </p>
                                         </li>
@@ -96,11 +95,11 @@
                         <div class="col-lg-4">
                             <div class="portion">
                                 <small>Profile Image</small>
-                                <img src="assets/images/pro_image_institute" class="pro_image_institute" alt="">
+                                <img src="{{uploadsUrl}}/{{data.cover}}" class="pro_image_institute" onerror="this.src = 'assets/images/no-image.png';">
                                 <ul class="item_list">
                                     <li>
                                         <small>Affiliated To </small>
-                                        <p>NTR University of Health Sciences, Vijayawada</p>
+                                        <p>{{data.affiliated_to}}</p>
                                     </li>
 
 
@@ -146,7 +145,7 @@
                                         </li>
                                         <li>
                                             <small>Hostel Facility</small>
-                                            <p>YES</p>
+                                            <p>{{data.hostel_facility}}</p>
                                         </li>
                                         <li>
                                             <small>Library Facility</small>
@@ -161,7 +160,7 @@
                                     <ul class="item_list">
                                         <li>
                                             <small>Admin ranking</small>
-                                            <p>N/A</p>
+                                            <p>{{data.admin_ranking}}</p>
                                         </li>
                                         <li>
                                             <small>Contact numbers</small>

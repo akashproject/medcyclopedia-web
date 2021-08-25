@@ -40,7 +40,7 @@ import { ReferearnComponent } from './template-component/referearn/referearn.com
 import { ProfileComponent } from './template-component/profile/profile.component';
 import { AbroadInsListComponent } from './template-component/abroad-ins-list/abroad-ins-list.component';
 import { CompareComponent } from './template-component/compare/compare.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -58,7 +58,8 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './template-component/spinner/spinner.component';
-import { SpinnerService } from './all-services/spinner.service';
+// import { SpinnerService } from './all-services/spinner.service';
+import { InterceptorService } from './all-services/interceptor.service';
 
 
 
@@ -132,7 +133,9 @@ import { SpinnerService } from './all-services/spinner.service';
     MatProgressSpinnerModule
 
   ],
-  providers: [SpinnerService],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : InterceptorService, multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

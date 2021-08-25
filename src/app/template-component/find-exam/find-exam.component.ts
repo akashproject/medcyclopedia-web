@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from 'src/app/all-services/courses.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-find-exam',
   templateUrl: './find-exam.component.html',
@@ -7,7 +8,11 @@ import { CoursesService } from 'src/app/all-services/courses.service';
 })
 export class FindExamComponent implements OnInit {
   courses:any;
-  constructor(private courseService:CoursesService) { }
+  uploadsUrl: any;
+  constructor(private courseService:CoursesService) { 
+    this.uploadsUrl = environment.uploadsUrl;
+
+  }
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe(res=>{

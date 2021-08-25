@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://med.scriptcrown.com/api'
+  apiUrl: 'https://med.scriptcrown.com/api',
+  uploadsUrl: 'https://med.scriptcrown.com/uploads',
 };
 
 /*

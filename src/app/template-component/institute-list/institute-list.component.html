@@ -27,13 +27,13 @@
             <div class="all_layout ">
                <div class="head">
                    <div class="image_back">
-                       <img src="assets/images/il1.png" alt="">
+                       <img src="{{uploadsUrl}}/{{item.logo}}" onerror="this.src = 'assets/images/no-image.png';">
                        {{item.title}}
 
                    </div>
                    <div class="heart d-flex align-items-center">
                     <span class="fa fa-heart"></span>
-                    0
+                    {{item.likecount}}
                 </div>
                </div>
                <div class="details d-flex align-items-center">
@@ -47,7 +47,7 @@
                  <div class="right d-flex align-items-center justify-content-center">
                      <div class="d-flex flex-column align-items-center">
                          <p>For Expert Counselling</p>
-                         <img src="assets/images/click_here.png" routerLink="/expert-counselling" alt="">
+                         <img src="assets/images/click_here.png" routerLink="/expert-counselling" onerror="this.src = 'assets/images/no-image.png';">
                      </div>
                  </div>
                </div>

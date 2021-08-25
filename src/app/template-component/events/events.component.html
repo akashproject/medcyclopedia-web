@@ -9,7 +9,7 @@
                 <div class="row" *ngFor="let ne of news_events">
                     <div class="col-lg-4">
                         <div class="portion">
-                            <img src="assets/images/e1" alt="">
+                            <img src="{{uploadsUrl}}/{{ ne.image }}" onerror="this.src = 'assets/images/no-image.png';">
                             <p>{{ne.title}}<a href="{{ ne.description }}">CLICK HERE TO VIEW</a></p>
                             
                         </div>

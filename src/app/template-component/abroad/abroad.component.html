@@ -10,7 +10,7 @@
         <h1>Popular coutries for MBBS Abroad</h1>
         <div class="country_back">
             <div class="port" *ngFor="let item of countries" (click)="getCountryId(item.id)">
-                <img src="assets/images/c1.png" alt="">
+                <img src="assets/images/{{item.name}}.png" onerror="this.src = 'assets/images/no-image.png';">
                 <p>{{item.name }}</p>
             </div>
 

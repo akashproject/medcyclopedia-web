@@ -6,17 +6,17 @@
             <h1>Media</h1>
 
             <div class="cards_back">
-                <div class="row">
+                <div class="row" *ngFor="let media of medias">
                     <div class="col-lg-4">
                         <div class="portion">
-                            <h2>The New Indian Express</h2>
-                            <img src="assets/images/m1" alt="">
-                            <p>National Medical Commission will be the new regulator of India's medical education <a href="">CLICK HERE TO VIEW</a></p>
+                            <h2>{{media.title}}</h2>
+                            <img src="{{uploadsUrl}}/{{media.image}}" onerror="this.src = 'assets/images/no-image.png';">
+                            <p>{{media.description}}<a href="https://{{media.link}}">CLICK HERE TO VIEW</a></p>
                             
                         </div>
                     </div>
                     
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <div class="portion">
                             <h2>TIMES OF BENGAL</h2>
                             <img src="assets/images/m2" alt="">
@@ -47,7 +47,7 @@
                             <p>Medcyclopedia App launched by Infinity to simplify medical admissions <a href="">CLICK HERE TO VIEW</a></p>
                             
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
