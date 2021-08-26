@@ -12,4 +12,9 @@ export class CoursesService {
   getCourses(){
     return this.http.get(`${environment.apiUrl}/courses`);
   }
+
+  getInstituteCourses(id:any){
+    return this.http.get(`${environment.apiUrl}/institute-courses/`+id);
+    
+  }
 }

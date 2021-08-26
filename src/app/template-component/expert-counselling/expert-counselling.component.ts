@@ -70,6 +70,8 @@ export class ExpertCounsellingComponent implements OnInit {
       let payment_id = response.razorpay_payment_id;
       let payment_status = 'success';
 
+      console.log(date,time,media,order_id,language,payment_id,payment_status);
+
       this.orderservice.createOrder(date,time,media,order_id,language,payment_id,payment_status).subscribe(res=>{
         console.log(res);
       })
