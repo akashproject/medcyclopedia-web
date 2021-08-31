@@ -68,7 +68,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(d => console.log(d)).catch(error => {
+      console.log(error);
+    });;
   }
 
   logOut(): void {
