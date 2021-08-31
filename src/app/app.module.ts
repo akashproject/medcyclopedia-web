@@ -53,6 +53,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
+
+import { DatePipe } from '@angular/common';
+
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -135,9 +139,11 @@ import {
     StorageServiceModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatInputModule
   ],
   providers: [
+    DatePipe,
     {provide : HTTP_INTERCEPTORS, useClass : InterceptorService, multi : true},
     {provide: 'SocialAuthServiceConfig',
       useValue: {

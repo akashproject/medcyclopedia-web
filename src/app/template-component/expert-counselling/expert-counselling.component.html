@@ -17,14 +17,20 @@
                                 <p>Preferred date</p>
                             </div>
                             <div class="col-md-6">
-                              <mat-form-field appearance="fill">
+                              <!-- <mat-form-field appearance="fill">
                                 <mat-label>Enter a date range</mat-label>
                                 <mat-date-range-input [rangePicker]="picker">
-                                  <input matStartDate placeholder="Start date" #dateRangeStart>
+                                  <input matStartDate placeholder="Date" #dateRangeStart>
                                   <input matEndDate placeholder="End date" #dateRangeEnd (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
                                 </mat-date-range-input>
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-date-range-picker #picker></mat-date-range-picker>
+                              </mat-form-field> -->
+                              <mat-form-field appearance="fill">
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="picker" [(ngModel)]="date" name="date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
                               </mat-form-field>
                             </div>
                         </div>
@@ -37,21 +43,21 @@
                             <div class="col-md-6">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" id="morning" value="10am-1pm" [(ngModel)]="readioSelected">
+                                      <input type="radio" name="time" id="morning" value="10am-1pm" [(ngModel)]="readioSelected" [disabled]="time_flag">
                                       <label for="morning" class=" d-flex align-center">
                                         <span></span>
                                         10am-1pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" id="afternoon" value="1pm-5pm" [(ngModel)]="readioSelected">
+                                      <input type="radio" name="time" id="afternoon" value="1pm-5pm" [(ngModel)]="readioSelected" [disabled]="time_flag">
                                       <label for="afternoon" class=" d-flex align-center">
                                         <span></span>
                                         1pm-5pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" value="1pm-5pm" id="evening" [(ngModel)]="readioSelected">
+                                      <input type="radio" name="time" value="5pm-8pm" id="evening" [(ngModel)]="readioSelected" [disabled]="time_flag">
                                       <label for="evening" class=" d-flex align-center">
                                         <span></span>
                                         5pm-8pm

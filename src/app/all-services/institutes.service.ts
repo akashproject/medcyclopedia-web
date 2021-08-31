@@ -40,4 +40,8 @@ export class InstitutesService {
     return this.http.post(`${environment.apiUrl}/notifications`,{institute_id :institute_id});
   }
 
+  getLikedInstitute(user_id:any, institute_id:any){
+    return this.http.post(`${environment.apiUrl}/like-institute`, {user_id : user_id, institute_id : institute_id})
+  }
+
 }
