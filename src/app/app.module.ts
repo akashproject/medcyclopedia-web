@@ -58,10 +58,14 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './template-component/spinner/spinner.component';
-// import { SpinnerService } from './all-services/spinner.service';
+import { SpinnerService } from './all-services/spinner.service';
 import { InterceptorService } from './all-services/interceptor.service';
 
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 
 
@@ -130,11 +134,28 @@ import { InterceptorService } from './all-services/interceptor.service';
     MatExpansionModule,
     StorageServiceModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    SocialLoginModule
   ],
   providers: [
-    {provide : HTTP_INTERCEPTORS, useClass : InterceptorService, multi : true}
+    {provide : HTTP_INTERCEPTORS, useClass : InterceptorService, multi : true},
+    {provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'clientId'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-//import { SocialAuthService, GoogleLoginProvider, SocialUser,FacebookLoginProvider } from 'angularx-social-login';
+import { SocialAuthService, GoogleLoginProvider, SocialUser,FacebookLoginProvider } from 'angularx-social-login';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SigninService } from 'src/app/all-services/signin.service';
-import { SnackbarService } from 'src/app/all-services/snackbar.service';
+import { SigninService } from '../../all-services/signin.service';
+import { SnackbarService } from '../../all-services/snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
   token: string | undefined;
 
 
-  //socialUser: SocialUser | undefined;
+  socialUser: SocialUser | undefined;
   isLoggedin: boolean | undefined;
 
   constructor(private formBuilder: FormBuilder,
-    // private socialAuthService: SocialAuthService,
+    private socialAuthService: SocialAuthService,
     private signinservice: SigninService,
     private router: Router,
     private snackmatservice: SnackbarService
@@ -67,15 +67,15 @@ export class LoginComponent implements OnInit {
 
 
 
-    // this.socialAuthService.authState.subscribe((user) => {
-    //   this.socialUser = user;
-    //   this.isLoggedin = (user != null);
-    //   console.log(this.socialUser);
-    // });
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = (user != null);
+      console.log(this.socialUser);
+    });
   }
 
   loginWithGoogle(): void {
-    //this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   logOut(): void {
