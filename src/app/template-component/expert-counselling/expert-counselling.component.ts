@@ -20,7 +20,10 @@ export class ExpertCounsellingComponent implements OnInit {
   enddate:any;
 
   date : any;
-  time_flag : boolean = false;
+  // time_flag : boolean = false;
+  time_flag1 : boolean = false;
+  time_flag2 : boolean = false;
+  time_flag3 : boolean = false;
   transform: any;
 
   constructor(private winRef: WindowRefService,private orderservice:OrderService,
@@ -44,18 +47,18 @@ export class ExpertCounsellingComponent implements OnInit {
     // console.log(transform);
 
     if(Number.parseInt(this.transform) >= 1000){
-      this.time_flag = true;
+      this.time_flag1 = true;
       console.log("1")
 
     }
     if(Number.parseInt(this.transform) >= 1300){
-      this.time_flag = true;
+      this.time_flag2 = true;
       console.log("2")
 
 
     }
     if(Number.parseInt(this.transform) >= 1700){
-      this.time_flag = true;
+      this.time_flag3 = true;
       console.log("3")
 
 
