@@ -146,7 +146,7 @@ import {
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'clientId'
+              '727015507423-0qoop0c0r2dkocomrkc74n7r1l445e1s.apps.googleusercontent.com'
             )
           },
           {
