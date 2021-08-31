@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SigninService } from 'src/app/all-services/signin.service';
@@ -19,6 +20,12 @@ export class ConfirmUserComponent implements OnInit {
   mobile: string = "";
   referral: string = "";
 
+  @ViewChild("otp1")  otp1: ElementRef<HTMLInputElement> | undefined ;
+  @ViewChild("otp2") private otp2: ElementRef | undefined;
+  @ViewChild("otp3") private otp3: ElementRef | undefined;
+  @ViewChild("otp4") private otp4: ElementRef | undefined;
+  @ViewChild("otp5") private otp5: ElementRef | undefined;
+  @ViewChild("otp6") private otp6: ElementRef | undefined;
   place1: string = "";
   place2: string = "";
   place3: string = "";
@@ -51,6 +58,9 @@ export class ConfirmUserComponent implements OnInit {
     private router : Router) { }
 
   ngOnInit(): void {
+
+
+
 
     this.loc = this.location.getState();
 
@@ -130,6 +140,11 @@ export class ConfirmUserComponent implements OnInit {
         });
       }
 
+  }
+
+  gotoNextField(next : any) {
+    // console.log(this.one);
+    next.focus();
   }
 
 }

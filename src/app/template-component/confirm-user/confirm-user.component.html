@@ -10,12 +10,12 @@
              <form action="" class="confirm" [formGroup]="otpForm" (ngSubmit)="register()">
                  <p>Please enter the OTP sent to your registered Mobile number</p>
                  <div class="d-flex align-items-center justify-content-center">
-                     <input type="text" formControlName="place1" id="place1" maxlength="1">
-                     <input type="text" formControlName="place2" id="place2" maxlength="1">
-                     <input type="text" formControlName="place3" id="place3" maxlength="1">
-                     <input type="text" formControlName="place4" id="place4" maxlength="1">
-                     <input type="text" formControlName="place5" id="place5" maxlength="1">
-                     <input type="text" formControlName="place6" id="place6" maxlength="1">
+                     <input #otp1 type="number" formControlName="place1" id="place1" maxlength="1"  (keyup)="gotoNextField(otp2)">
+                     <input #otp2 type="text" formControlName="place2" id="place2" maxlength="1"  (keyup)="gotoNextField(otp3)">
+                     <input #otp3 type="text" formControlName="place3" id="place3" maxlength="1" (keyup)="gotoNextField(otp4)">
+                     <input #otp4 type="text" formControlName="place4" id="place4" maxlength="1" (keyup)="gotoNextField(otp5)">
+                     <input #otp5 type="text" formControlName="place5" id="place5" maxlength="1" (keyup)="gotoNextField(otp6)">
+                     <input #otp6 type="text" formControlName="place6" id="place6" maxlength="1">
                  </div>
                  <div class="button_back">
                      <button>resent OTP</button>

@@ -11,9 +11,9 @@
              <form action="">
                  <div class="portion">
                      <label for="phone">Mobile No</label>
-                     <input type="text" name="phone" id="phone">
+                     <input type="number" name="mobile" id="mobile" [(ngModel)]="mobile">
                  </div>
-                 <button routerLink="/confirm-user">Request OTP</button>
+                 <button (click)="getOtp()">Request OTP</button>
              </form>
          </div>
     </div>
