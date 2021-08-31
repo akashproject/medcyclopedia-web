@@ -24,4 +24,20 @@ export class InstitutesService {
 
   }
 
+  getMyInstitutions(user_id:any){
+    return this.http.get(`${environment.apiUrl}/my-institutes/`+user_id);
+  }
+
+  addMyInstitute(user_id:any, institute_id:any) {
+    return this.http.post(`${environment.apiUrl}/add-my-institute`, {user_id : user_id, institute_id : institute_id})
+  }
+
+  getAllInstitutes(title:any){
+    return this.http.post(`${environment.apiUrl}/all-institutes`, {title : title});
+  }
+
+  getInstituteNotification(institute_id:any){
+    return this.http.post(`${environment.apiUrl}/notifications`,{institute_id :institute_id});
+  }
+
 }
