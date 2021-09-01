@@ -14,7 +14,8 @@
             <div class="all_layout ">
                 <div class="head">
                     <div class="image_back">
-                        <img src="{{uploadsUrl}}/{{data.logo}}" onerror="this.src = 'assets/images/no-image.png';"> {{data.title}}
+                        <img src="{{uploadsUrl}}/{{data.logo}}" onerror="this.src = 'assets/images/no-image.png';">
+                        {{data.title}}
                         <p>{{data.shortname}}</p>
                     </div>
                     <div class="heart d-flex align-items-center">
@@ -95,7 +96,8 @@
                         <div class="col-lg-4">
                             <div class="portion">
                                 <small style="display: block;">Profile Image</small>
-                                <img style="width: 240px;" src="{{uploadsUrl}}/{{data.cover}}" class="pro_image_institute" onerror="this.src = 'assets/images/no-image.png';">
+                                <img style="width: 240px;" src="{{uploadsUrl}}/{{data.cover}}"
+                                    class="pro_image_institute" onerror="this.src = 'assets/images/no-image.png';">
                                 <ul class="item_list">
                                     <li>
                                         <small>Affiliated To </small>
@@ -190,7 +192,7 @@
                                 <div class="button" (click)="courses_pop(data.id)">Courses</div>
                             </div>
                             <div class="wrap">
-                                <div class="button" (click)="noti_pop()">Notification</div>
+                                <div class="button" (click)="noti_pop(data.id)">Notification</div>
                             </div>
                             <div class="wrap">
                                 <div class="button" (click)="pgallery_pop()">Photo Gallery</div>
@@ -205,7 +207,9 @@
                         </div>
                         <div class="full_button d-flex align-items-center justify-content-center flex-column">
                             <p>Interested to get admission?</p>
-                            <div class="button" routerLink="/fyc/fyi/institute-list/institute-details/institute-confirmation">Click Here</div>
+                            <div class="button"
+                                routerLink="/fyc/fyi/institute-list/institute-details/institute-confirmation">Click Here
+                            </div>
                         </div>
 
                     </div>
@@ -250,10 +254,12 @@
             <div class="all_detail_back details_page second" *ngIf="noti">
                 <div class="all_layout d-flex align-items-center ">
                     <h1>Institute Notification </h1>
-                    <ul class="notification_back">
+                    <ul class="notification_back" *ngFor="let noti of ins_notifications">
                         <li class="d-flex align-items-center justify-content-between">
                             <p>
-                                <span class="no">0001</span><br> Click here to know latest and important notices http://www.aniims.org/notice.php
+                                <span class="no">{{noti.title}}</span><br>
+                                Click here to know more
+                                <a href="{{noti.description}}">{{noti.description}}</a>
 
                             </p>
                             <div class="button" (click)="popOpen()">View</div>
@@ -333,7 +339,8 @@
     <div class="popup" *ngIf="pop" (click)="popClose()">
         <div class="back">
             <p>
-                <span class="no">0001</span><br> Click here to know latest and important notices http://www.aniims.org/notice.php
+                <span class="no">0001</span><br> Click here to know latest and important notices
+                http://www.aniims.org/notice.php
 
             </p>
 

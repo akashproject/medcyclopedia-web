@@ -24,6 +24,7 @@ export class InstituteDetailsComponent implements OnInit {
   user_id: any;
   like : any;
   institute_id: any;
+  ins_notifications: any = [];
 
   constructor(private route: ActivatedRoute, private router: Router, private insService: InstitutesService,
     private courseService: CoursesService,
@@ -52,10 +53,14 @@ export class InstituteDetailsComponent implements OnInit {
 
 
   }
-  noti_pop() {
+  noti_pop(id:any) {
     this.courses = false;
     this.noti = true;
     this.pgallery = false;
+    this.insService.getInstituteNotification(id).subscribe(data =>{
+      console.log(data);
+      this.ins_notifications = data;
+    })
   }
   pgallery_pop() {
     this.courses = false;
