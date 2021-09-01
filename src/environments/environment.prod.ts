@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://med.scriptcrown.com/api'
+  apiUrl: 'https://med.scriptcrown.com/api',
+  uploadsUrl: 'https://med.scriptcrown.com/uploads',
 };

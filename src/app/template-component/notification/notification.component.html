@@ -6,38 +6,11 @@
             <h1>Notifications</h1>
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
-                   <ul class="notify_list">
+                   <ul class="notify_list" *ngFor="let noti of notifications">
                         <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
-                        </li>
-                        <li>
-                            Amritha Vishwa Vidyapeetham provides guidelines for BSc Nursing 2020 Online Admission Proc...
-                            <a href="">CLICK HERE TO VIEW</a>
+                            {{noti.title}}
+                            <a href="{{noti.description}}">CLICK HERE TO VIEW</a>
+
                         </li>
                    </ul>
                 </div>

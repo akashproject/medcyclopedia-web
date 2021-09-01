@@ -9,16 +9,42 @@
         <h2><em>KNOW IT FROM THE EXPERTS!</em></h2>
         <div class="all_detail_back">
             <h1>Upcoming panel discussions</h1>
-            <div class="all_layout">
+            <div class="all_layout" *ngIf="upFlag">
                 <div role="alert" class="alert alert-danger">There is no upcoming panel </div>
             </div>
-            
+            <div class="cards_back">
+                <div class="row" *ngFor="let up of upcoming_panel">
+                    <div class="col-lg-4">
+                        <div class="portion">
+                            <img src="{{uploadsUrl}}/{{ up.image }}" onerror="this.src = 'assets/images/no-image.png';">
+                            <p>{{up.title}}</p>
+                            <p>{{ up.description }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="all_detail_back">
             <h1>Registered panel discussions</h1>
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
-                    <div role="alert" class="alert alert-danger">You have not registered for any panel discussion</div>
+                    <div role="alert" class="alert alert-danger" *ngIf="pastFlag">You have not registered for any panel
+                        discussion</div>
+                </div>
+
+                <div class="cards_back">
+                    <div class="row" *ngFor="let past of past_panel">
+                        <div class="col-lg-4">
+                            <div class="portion">
+                                <img src="{{uploadsUrl}}/{{ past.image }}" onerror="this.src = 'assets/images/no-image.png';">
+                                <p>{{past.title}}</p>
+                                <p>{{past.description}}</p>
+    
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="right d-flex align-items-center justify-content-center">
                     <div class="d-flex flex-column align-items-center">
@@ -27,8 +53,8 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>

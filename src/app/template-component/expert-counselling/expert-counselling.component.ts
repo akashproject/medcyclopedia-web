@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/all-services/order.service';
 import { WindowRefService } from 'src/app/window-ref.service';
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -17,23 +19,61 @@ export class ExpertCounsellingComponent implements OnInit {
   startdate:any;
   enddate:any;
 
-  constructor(private winRef: WindowRefService,private orderservice:OrderService) { }
+  date : any;
+  // time_flag : boolean = false;
+  time_flag1 : boolean = false;
+  time_flag2 : boolean = false;
+  time_flag3 : boolean = false;
+  transform: any;
+
+  constructor(private winRef: WindowRefService,private orderservice:OrderService,
+    public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     //this.createRzpayOrder()
+    this.timecheck();
   }
 
-  dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
-    this.startdate = dateRangeStart.value;
-    this.enddate = dateRangeEnd.value;
+  // dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
+  //   this.startdate = dateRangeStart.value;
+  //   this.enddate = dateRangeEnd.value;
+  // }
+
+
+  timecheck(){
+
+    let date_now = new Date();
+    this.transform = this.datepipe.transform(date_now, 'HHMM');
+    // console.log(transform);
+
+    if(Number.parseInt(this.transform) >= 1000){
+      this.time_flag1 = true;
+      console.log("1")
+
+    }
+    if(Number.parseInt(this.transform) >= 1300){
+      this.time_flag2 = true;
+      console.log("2")
+
+
+    }
+    if(Number.parseInt(this.transform) >= 1700){
+      this.time_flag3 = true;
+      console.log("3")
+
+
+    }
+
   }
 
   createRzpayOrder() {
 
+
+
     console.log(this.readioSelected)
     console.log(this.readioSelected2)
     console.log(this.readioSelected3)
-    console.log(this.startdate)
+    console.log("DAte ",this.date)
     console.log(this.enddate)
     this.payWithRazor(12);
   }
