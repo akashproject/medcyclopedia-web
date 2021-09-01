@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/all-services/order.service';
 import { WindowRefService } from 'src/app/window-ref.service';
 import { DatePipe } from '@angular/common';
+import { SnackbarService } from 'src/app/all-services/snackbar.service';
 
 
 
@@ -13,25 +14,27 @@ import { DatePipe } from '@angular/common';
 
 })
 export class ExpertCounsellingComponent implements OnInit {
-  readioSelected:any;
-  readioSelected2:any;
-  readioSelected3:any;
-  startdate:any;
-  enddate:any;
+  readioSelected: any;
+  readioSelected2: any;
+  readioSelected3: any;
+  startdate: any;
+  enddate: any;
 
-  date : any;
+  date: any;
   // time_flag : boolean = false;
-  time_flag1 : boolean = false;
-  time_flag2 : boolean = false;
-  time_flag3 : boolean = false;
+  time_flag1: boolean = false;
+  time_flag2: boolean = false;
+  time_flag3: boolean = false;
   transform: any;
+  disable_all: boolean = false;
+  enterred_date: any;
+  today: any;
 
-  constructor(private winRef: WindowRefService,private orderservice:OrderService,
-    public datepipe: DatePipe) { }
+  constructor(private winRef: WindowRefService, private orderservice: OrderService,
+    public datepipe: DatePipe, private snackbar: SnackbarService) { }
 
   ngOnInit(): void {
     //this.createRzpayOrder()
-    this.timecheck();
   }
 
   // dateRangeChange(dateRangeStart: HTMLInputElement, dateRangeEnd: HTMLInputElement) {
@@ -39,46 +42,71 @@ export class ExpertCounsellingComponent implements OnInit {
   //   this.enddate = dateRangeEnd.value;
   // }
 
+  checkDateAndTime() {
+    console.log(this.date);
+    this.enterred_date = this.datepipe.transform(this.date, 'yyMMdd');
+    console.log(this.enterred_date)
 
-  timecheck(){
+    let today_date = new Date();
+    this.today = this.datepipe.transform(today_date, 'yyMMdd');
+    console.log(this.today)
 
-    let date_now = new Date();
-    this.transform = this.datepipe.transform(date_now, 'HHMM');
-    // console.log(transform);
+    if (this.enterred_date === this.today) {
+      this.transform = this.datepipe.transform(today_date, 'HHMM');
+      console.log(this.transform)
+      if (Number.parseInt(this.transform) >= 1000) {
+        this.time_flag1 = true;
+        console.log("1")
 
-    if(Number.parseInt(this.transform) >= 1000){
-      this.time_flag1 = true;
-      console.log("1")
+      } else {
+        this.time_flag1 = false;
+
+      }
+      if (Number.parseInt(this.transform) >= 1300) {
+        this.time_flag2 = true;
+        console.log("2")
+
+
+      } else {
+        this.time_flag2 = false;
+
+      }
+      if (Number.parseInt(this.transform) >= 1700) {
+        this.time_flag3 = true;
+        console.log("3")
+
+
+      } else {
+        this.time_flag3 = false;
+
+      }
+      this.disable_all = false;
+    }
+    else if (this.enterred_date < this.today) {
+      // console.log("this date is long gone")
+      this.disable_all = true;
+      this.snackbar.openSnackBarWithTime("You have enterred a past date", 'close')
 
     }
-    if(Number.parseInt(this.transform) >= 1300){
-      this.time_flag2 = true;
-      console.log("2")
 
 
-    }
-    if(Number.parseInt(this.transform) >= 1700){
-      this.time_flag3 = true;
-      console.log("3")
-
-
-    }
 
   }
 
   createRzpayOrder() {
 
 
-
-    console.log(this.readioSelected)
-    console.log(this.readioSelected2)
-    console.log(this.readioSelected3)
-    console.log("DAte ",this.date)
-    console.log(this.enddate)
-    this.payWithRazor(12);
+    if (this.disable_all != true) {
+      console.log(this.readioSelected)
+      console.log(this.readioSelected2)
+      console.log(this.readioSelected3)
+      console.log("DAte ", this.date)
+      console.log(this.enddate)
+      this.payWithRazor(12);
+    }
   }
 
-  payWithRazor(val:any) {
+  payWithRazor(val: any) {
     const options: any = {
       key: 'rzp_test_Ii0YAZ0ccSrcLs',
       key_secret: 'uI4QCdMjvVTQQJ1LGMVauW8R',
@@ -99,7 +127,7 @@ export class ExpertCounsellingComponent implements OnInit {
         color: '#0c238a'
       }
     };
-    options.handler = ((response:any, error:any) => {
+    options.handler = ((response: any, error: any) => {
       options.response = response;
       console.log(response);
       let date = this.startdate;
@@ -110,9 +138,9 @@ export class ExpertCounsellingComponent implements OnInit {
       let payment_id = response.razorpay_payment_id;
       let payment_status = 'success';
 
-      console.log(date,time,media,order_id,language,payment_id,payment_status);
+      console.log(date, time, media, order_id, language, payment_id, payment_status);
 
-      this.orderservice.createOrder(date,time,media,order_id,language,payment_id,payment_status).subscribe(res=>{
+      this.orderservice.createOrder(date, time, media, order_id, language, payment_id, payment_status).subscribe(res => {
         console.log(res);
       })
 
