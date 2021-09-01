@@ -6,8 +6,8 @@
             <h1>Education Loan Assistance</h1>
 
             <div class="cards_back">
-                <div class="row" *ngFor="let bank of allbanks">
-                    <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-4" *ngFor="let bank of allbanks">
                         <div class="portion">
                             <h2>{{ bank.bank_name}}</h2>
                             <img src="assets/images/{{ bank.bank_name}}.png" alt="">

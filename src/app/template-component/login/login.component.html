@@ -9,9 +9,10 @@
             <form action="" [formGroup]="signinForm" (ngSubmit)="login()">
                 <h6>Login With</h6>
                 <div class="portion">
-                    <label for="phone">Enter Valid Phone No</label>
-                    <input type="text" [(ngModel)]="phone" formControlName="phone" id="phone">
+                    <!--<label for="phone">Enter Valid Phone No</label>-->
+                    <input type="text" placeholder="Enter Valid Phone No" [(ngModel)]="phone" formControlName="phone" id="phone">
                 </div>
+                
                 <div *ngIf="errorControl.phone.touched && errorControl.phone.invalid">
                     <span style="color: red;" *ngIf="errorControl.phone.errors.pattern">
                       Mobile is not in proper format.
@@ -22,8 +23,8 @@
                   </div>
 
                 <div class="portion">
-                    <label for="">Enter Password</label>
-                    <input type="password"  id="password" [(ngModel)]="password" formControlName="password">
+                    <!--<label for="">Enter Password</label>-->
+                    <input type="password" placeholder="Enter Password"  id="password" [(ngModel)]="password" formControlName="password">
                 </div>
                 <div *ngIf="errorControl.password.touched && errorControl.password.invalid">
                     <span style="color: red;" *ngIf="errorControl.password.errors.required">
