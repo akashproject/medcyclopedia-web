@@ -254,6 +254,10 @@
             <div class="all_detail_back details_page second" *ngIf="noti">
                 <div class="all_layout d-flex align-items-center ">
                     <h1>Institute Notification </h1>
+                    <div class="all_layout" *ngIf="upFlag">
+                        <div role="alert" class="alert alert-danger">There is no notfication </div>
+                    </div>                    
+                    <div>
                     <ul class="notification_back" *ngFor="let noti of ins_notifications">
                         <li class="d-flex align-items-center justify-content-between">
                             <p>
@@ -262,9 +266,10 @@
                                 <a href="{{noti.description}}">{{noti.description}}</a>
 
                             </p>
-                            <div class="button" (click)="popOpen()">View</div>
+                            <!-- <div class="button" (click)="popOpen()">View</div> -->
                         </li>
                     </ul>
+                </div>
                 </div>
             </div>
             <div class="all_detail_back details_page second" *ngIf="pgallery">

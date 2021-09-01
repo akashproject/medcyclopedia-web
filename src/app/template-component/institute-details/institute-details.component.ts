@@ -25,6 +25,7 @@ export class InstituteDetailsComponent implements OnInit {
   like : any;
   institute_id: any;
   ins_notifications: any = [];
+  upFlag: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private insService: InstitutesService,
     private courseService: CoursesService,
@@ -60,6 +61,9 @@ export class InstituteDetailsComponent implements OnInit {
     this.insService.getInstituteNotification(id).subscribe(data =>{
       console.log(data);
       this.ins_notifications = data;
+      if(this.ins_notifications.length === 0){
+        this.upFlag = true;
+      }
     })
   }
   pgallery_pop() {
