@@ -20,6 +20,8 @@ export class InstituteListComponent implements OnInit {
   access_token : any;
   user_detail : any =[];
   user_id : any;
+  comparecollege: any = [];
+  compare_button_flag : boolean = true;
 
   constructor(private route: ActivatedRoute,private router:Router,private insService:InstitutesService, private siginservice : SigninService) {
     this.uploadsUrl = environment.uploadsUrl;
@@ -63,6 +65,50 @@ export class InstituteListComponent implements OnInit {
     }
 
     
+  }
+
+  toggle(event:any){
+    console.log(event.source.value);
+
+    // this.comparecollege = [];
+    this.comparecollege.push(event.source.value);
+    if( this.comparecollege.length > 0){
+      this.compare_button_flag = false
+    }
+
+    if(this.comparecollege.length === 2){
+      this.compare_button_flag = false
+    }else{
+      this.compare_button_flag = true
+
+    }
+  }
+
+  removeCollege(event:any){
+    const index: number = this.comparecollege.indexOf(event.source.value);
+    this.comparecollege.splice(index,1);
+    console.log(this.comparecollege)
+    this.compare_button_flag = true
+
+    if(this.comparecollege.length === 2){
+      this.compare_button_flag = false
+    }else{
+      this.compare_button_flag = true
+
+    }
+
+
+  }
+
+  compareColleges(){
+
+    if(this.comparecollege.length === 2){
+      this.compare_button_flag = false
+
+      this.router.navigate(["/compare"], {state :{colleges : this.comparecollege}});
+    }else{
+      console.log("More than two college");
+    }
   }
 
 }

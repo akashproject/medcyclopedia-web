@@ -2,7 +2,7 @@
     <div class="container">
         <app-site-header></app-site-header>
         <app-site-banner></app-site-banner>
-        <div class="all_detail_back">
+        <div class="all_detail_back" >
             <h1>General compare</h1>
             <div class="all_layout">
                 <div class="row">
@@ -10,10 +10,10 @@
                         <small>Institute Name</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>ACSR Government Medical College, Nellore</p>
+                        <p>{{college1?.title}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>All India Institute of Medical Sciences, Mangalagiri, Vijayawada</p>
+                        <p>{{college2?.title}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -21,10 +21,10 @@
                         <small>City</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>Nellore</p>
+                        <p>{{college1?.city}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>VijayWada</p>
+                        <p>{{college2?.city}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -32,10 +32,10 @@
                         <small>Inception Year</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>2014</p>
+                        <p>{{college1?.year_of_inception}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>2018</p>
+                        <p>{{college2?.year_of_inception}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -43,10 +43,10 @@
                         <small>Ownership Type</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>Government</p>
+                        <p>{{college1?.ownership_type}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>Government</p>
+                        <p>{{college2?.ownership_type}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -54,57 +54,57 @@
                         <small>Affiliated To</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>NTR University of Health Sciences, Vijayawada</p>
+                        <p>{{college1?.affiliated_to}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>NTR University of Health Sciences, VijayWada</p>
+                        <p>{{college2?.affiliated_to}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <small>Institute Name</small>
+                        <small>Food Availability</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>ACSR Government Medical College, Nellore</p>
+                        <p>{{college1?.food_availability}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>All India Institute of Medical Sciences, Mangalagiri, Vijayawada</p>
+                        <p>{{college2?.food_availability}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <small>Institute Name</small>
+                        <small>Hospital</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>ACSR Government Medical College, Nellore</p>
+                        <p>{{college1?.hospital}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>All India Institute of Medical Sciences, Mangalagiri, Vijayawada</p>
+                        <p>{{college2?.hospital}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <small>Institute Name</small>
+                        <small>Library</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>ACSR Government Medical College, Nellore</p>
+                        <p>{{college1?.library}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>All India Institute of Medical Sciences, Mangalagiri, Vijayawada</p>
+                        <p>{{college2?.library}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <small>Institute Name</small>
+                        <small>Placement</small>
                     </div>
                     <div class="col-md-5 border-line">
-                        <p>ACSR Government Medical College, Nellore</p>
+                        <p>{{college1?.placement}}</p>
                     </div>
                     <div class="col-md-5">
-                        <p>All India Institute of Medical Sciences, Mangalagiri, Vijayawada</p>
+                        <p>{{college2?.placement}}</p>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-2">
                         <small>Institute Name</small>
                     </div>
@@ -128,17 +128,23 @@
                             a new college, so it wouldn't be great. But, the academics are top class and you would be
                             happy enough to come here for it.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-        <div class="all_detail_back">
+
+
+
+
+
+
+        <!-- <div class="all_detail_back">
             <h1>Course compare</h1>
             <div class="all_layout">
                 <mat-accordion class="example-headers-align" multi>
                     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                MBBS
+                                {{institute_courses1.course_name}}
                             </mat-panel-title>
                             <mat-panel-description></mat-panel-description>
                         </mat-expansion-panel-header>
@@ -149,37 +155,37 @@
                                         <small>Institute Name</small>
                                     </div>
                                     <div class="col-md-8">
-                                        <p>ACSR Government Medical College, Nellore</p> 
+                                        <p>{{college1.title}}</p> 
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <small>Course Name</small>
-                                        <p>MBBS</p>
+                                        <p>{{institute_courses1.course_name}}</p>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <small>Annual Fee</small>
-                                                <p>11025</p>
+                                                <p>{{institute_courses1.fee}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <small>Course Duration</small>
-                                                <p>5.6 years</p>
+                                                <p>{{institute_courses1.duration}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <small>Number Of Seats</small>
-                                                <p>173</p>
+                                                <p>{{institute_courses1.seat}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <small>Enrolment Last Date</small>
-                                                <p>Oct 31, 2020</p>
+                                                <p>{{institute_courses1.last_enrolment_date}}</p>
                                             </div>
                                         </div>
                                         
@@ -192,7 +198,7 @@
                                         <small>Institute Name</small>
                                     </div>
                                     <div class="col-md-8">
-                                        <p>ACSR Government Medical College, Nellore</p> 
+                                        <p>{{college2.title}}</p> 
                                     </div>
                                 </div>
                                 <div class="row">
@@ -334,6 +340,6 @@
 
                 </mat-accordion>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

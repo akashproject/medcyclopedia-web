@@ -10,7 +10,7 @@
         </ul>
         <div class="select_compare d-flex align-items-center justify-content-between">
             <p>Please select 2 institute from list to compare.</p>
-            <button disabled>Compare</button>
+            <button (click)="compareColleges()" [disabled]="compare_button_flag">Compare</button>
         </div>
         <div class="pagi_back d-flex align-items-center justify-content-between">
             <div class="arrow_pagi d-flex align-items-center">
@@ -56,7 +56,8 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center check">
-                    <mat-checkbox>Add to compare</mat-checkbox>
+                    <mat-checkbox #c [value]="item" [checked]="!item.id" (change)="c.checked ? toggle($event) : removeCollege($event)">Add to compare</mat-checkbox>
+
                 </div>
             </div>
 
