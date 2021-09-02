@@ -279,58 +279,11 @@
                         <div class="row" *ngFor="let photo of ins_photos">
                             <div class="col-lg-4">
                                 <div class="portion">
-                                    <img src="assets/images/g1" alt="">
-                                    <p>Anatomy demonstration room</p>
+                                    <img src="{{uploadsUrl}}/{{photo.photo}}" onerror="this.src = 'assets/images/no-image.png';">
+                                    <p>{{photo.title}}</p>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g2" alt="">
-                                    <p>Council room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g3" alt="">
-                                    <p>Common Room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g1" alt="">
-                                    <p>Anatomy demonstration room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g2" alt="">
-                                    <p>Council room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g3" alt="">
-                                    <p>Common Room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g1" alt="">
-                                    <p>Anatomy demonstration room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g2" alt="">
-                                    <p>Council room</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="portion">
-                                    <img src="assets/images/g3" alt="">
-                                    <p>Common Room</p>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
