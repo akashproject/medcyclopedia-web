@@ -26,6 +26,7 @@ export class InstituteDetailsComponent implements OnInit {
   institute_id: any;
   ins_notifications: any = [];
   upFlag: boolean = false;
+  ins_photos: any;
 
   constructor(private route: ActivatedRoute, private router: Router, private insService: InstitutesService,
     private courseService: CoursesService,
@@ -66,10 +67,17 @@ export class InstituteDetailsComponent implements OnInit {
       }
     })
   }
-  pgallery_pop() {
+  pgallery_pop(id:any) {
     this.courses = false;
     this.noti = false;
     this.pgallery = true;
+    this.insService.getInstituteGallery(id).subscribe(data =>{
+      console.log(data);
+      this.ins_photos = data;
+      if(this.ins_photos.length === 0){
+        this.upFlag = true;
+      }
+    })
   }
 
   ngOnInit() {

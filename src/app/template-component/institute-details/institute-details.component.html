@@ -195,7 +195,7 @@
                                 <div class="button" (click)="noti_pop(data.id)">Notification</div>
                             </div>
                             <div class="wrap">
-                                <div class="button" (click)="pgallery_pop()">Photo Gallery</div>
+                                <div class="button" (click)="pgallery_pop(data.id)">Photo Gallery</div>
                             </div>
                             <div class="wrap">
                                 <div class="button">Virtual Tour</div>
@@ -276,7 +276,7 @@
                 <div class="all_layout d-flex align-items-center ">
                     <h1>Institute Gallery </h1>
                     <div class="gallery_section">
-                        <div class="row">
+                        <div class="row" *ngFor="let photo of ins_photos">
                             <div class="col-lg-4">
                                 <div class="portion">
                                     <img src="assets/images/g1" alt="">

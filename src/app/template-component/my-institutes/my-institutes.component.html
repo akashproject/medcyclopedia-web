@@ -4,21 +4,16 @@
         <app-site-banner></app-site-banner>
         <div class="all_detail_back">
             <h1>My Institutions</h1>
-            <ul class="list_back">
+            <ul class="list_back" *ngFor="let myins of my_inst">
                 <li>
-                    <h2>DEVDAHA MEDICAL COLLEGE,RUPANDEHI</h2>
+                    <h2>{{myins.title}}</h2>
                     <p><span> You viewed details of this institute</span><br>
                     You expressed interest to enrol for this institute</p>
                 </li>
-                <li>
-                    <h2>Gouri Devi Institute of Medical Sciences and Hospital, Durgapur</h2>
-                    <p><span>You viewed details of this institute</span></p>
-                </li>
-                <li>
-                    <h2>Ramakrishna Mission Hospital , School Of Nursing</h2>
-                    <p><span>You viewed details of this institute</span></p>
-                </li>
             </ul>
+            <div class="all_layout" *ngIf="upFlag">
+                <div role="alert" class="alert alert-danger">There is no institution</div>
+            </div> 
         </div>
     </div>
     

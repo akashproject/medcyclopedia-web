@@ -13,6 +13,7 @@ export class MyInstitutesComponent implements OnInit {
   user_data : any =[];
   user_id: any;
   my_inst: any = [];
+  upFlag: boolean = false;
   
   constructor(private signinservice: SigninService,
     private institutionService : InstitutesService ) { }
@@ -30,6 +31,9 @@ export class MyInstitutesComponent implements OnInit {
         this.institutionService.getMyInstitutions(this.user_id).subscribe(res1 => {
           console.log(res1);
           this.my_inst = res1;
+          if(this.my_inst.length === 0){
+            this.upFlag = true;
+          }
         })
       })
     }
