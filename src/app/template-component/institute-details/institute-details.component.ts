@@ -27,6 +27,7 @@ export class InstituteDetailsComponent implements OnInit {
   ins_notifications: any = [];
   upFlag: boolean = false;
   ins_photos: any;
+  like_counter : any;
 
   constructor(private route: ActivatedRoute, private router: Router, private insService: InstitutesService,
     private courseService: CoursesService,
@@ -85,6 +86,7 @@ export class InstituteDetailsComponent implements OnInit {
     this.institute_id = ins_id;
     this.insService.getInstitute(ins_id).subscribe(res => {
       this.data = res
+      this.like_counter = this.data.likecount;
       console.log(res)
     })
   }
@@ -109,6 +111,7 @@ export class InstituteDetailsComponent implements OnInit {
 
         this.insService.getLikedInstitute(this.user_id, this.institute_id).subscribe((data:any) =>{
           console.log(data);
+          this.like_counter = this.like_counter+1;
           this.like = true;
         })
         
