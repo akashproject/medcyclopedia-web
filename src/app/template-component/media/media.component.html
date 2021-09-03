@@ -6,8 +6,8 @@
             <h1>Media</h1>
 
             <div class="cards_back">
-                <div class="row" *ngFor="let media of medias">
-                    <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-4" *ngFor="let media of medias">
                         <div class="portion">
                             <h2>{{media.title}}</h2>
                             <img src="{{uploadsUrl}}/{{media.image}}" onerror="this.src = 'assets/images/no-image.png';">

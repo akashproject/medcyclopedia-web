@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { SigninService } from 'src/app/all-services/signin.service';
 import { SnackbarService } from 'src/app/all-services/snackbar.service';
 import { StatesService } from 'src/app/all-services/states.service';
-
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -18,12 +18,12 @@ export class ProfileComponent implements OnInit {
   save_buttons: boolean = false;
   edit_button: boolean = true;
   pop: boolean = false;
-
+  uploadsUrl : any;
   token_data: any = [];
   user_data: any = [];
   token: string = "";
   states: any = [];
-
+  files: any = "assets/images/empty-avatar.png";
   //user data
   name: string = "";
   first_name: string = "";
@@ -36,12 +36,12 @@ export class ProfileComponent implements OnInit {
   physical_status: string = "";
   email: string = "";
   score: string = "";
-
+  profileimage: string = "";
   constructor(private signinservice: SigninService,
     private stateservice: StatesService,
     private snackbarservice: SnackbarService,
     private router: Router) {
-
+      this.uploadsUrl = environment.uploadsUrl;
   }
 
   edit_content() {
@@ -71,10 +71,35 @@ export class ProfileComponent implements OnInit {
   }
 
   add_photo() {
+    if (this.files) {
+      //this.spinner.show();
+      this.signinservice.uploadPhofilephoto(this.token,this.files).subscribe((data: any) => {
+        //this.spinner.hide();
+        if (data && data.status === 200 && data.data) {
+          //this.logo = data.data;
+        }
+      }, (err: any) => {
+        console.log(err);
+       // this.spinner.hide();
+      });
+    } else {
+      console.log('no');
+    }
     this.pop = false;
   }
   cancle_photo() {
     this.pop = false;
+  }
+
+  preview_profile(event : any) {
+    this.files = event.target.files;
+    const file = event.target.files[0];
+    var reader = new FileReader();
+
+    reader.readAsDataURL(event.target.files[0]); // read file as data url
+    reader.onload = (event) => { // called once readAsDataURL is completed      
+      this.files = event.target?.result;
+    }
   }
 
   ngOnInit(): void {
@@ -118,6 +143,7 @@ export class ProfileComponent implements OnInit {
           this.physical_status = this.user_data.physical_status;
           this.email = this.user_data.email;
           this.score = this.user_data.score;
+          this.profileimage = this.user_data.profile_image;
         }
 
       }, (err: any) => {

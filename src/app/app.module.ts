@@ -157,7 +157,7 @@ import {
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId')
+            provider: new FacebookLoginProvider('248247087191583')
           }
         ]
       } as SocialAuthServiceConfig,

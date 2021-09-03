@@ -6,8 +6,8 @@
             <h1>News and Events</h1>
 
             <div class="cards_back">
-                <div class="row" *ngFor="let ne of news_events">
-                    <div class="col-lg-4">
+                <div class="row" >
+                    <div class="col-lg-4" *ngFor="let ne of news_events">
                         <div class="portion">
                             <img src="{{uploadsUrl}}/{{ ne.image }}" onerror="this.src = 'assets/images/no-image.png';">
                             <p>{{ne.title}}<a href="{{ ne.description }}">CLICK HERE TO VIEW</a></p>

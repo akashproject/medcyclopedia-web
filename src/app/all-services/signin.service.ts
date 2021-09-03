@@ -83,4 +83,13 @@ export class SigninService {
       })
     );
   }
+
+  uploadPhofilephoto(access_token : string,param: any){
+    console.log("here akky",param);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${access_token}`
+    })
+    return this.http.post(`${environment.apiUrl}/upload-profile-photo`, {file : param},{ headers });
+  }
 }

@@ -41,7 +41,7 @@
                             <div class="portion">
                                 <ul class="item_list d-flex justify-content-end">
                                     <li class="d-flex flex-column ">
-                                        <img src="assets/images/empty-avatar.png" alt="">
+                                        <img src="{{uploadsUrl}}/{{profileimage}}" alt="" width="100">
                                         <button class="button" (click)="upload_photo()">Upload Photo</button>
                                     </li>
                                   
@@ -227,10 +227,10 @@
 <div class="popup" *ngIf="pop">
     <div class="back">
         <h2>Upload Profile Image</h2>
-        <input type="file" name="" class="form-control" id="">
-        <div class="cropping_area d-flex align-items-center justify-content-center">
+        <input type="file" name="" class="form-control" id="" (change)="preview_profile($event)" accept="image/*">
+        <!-- <div class="cropping_area d-flex align-items-center justify-content-center">
             <h3>Cropping Area</h3>
-        </div>
+        </div> -->
         <div class="buttons d-flex align-items-center">
             <button mat-raised-button color="primary" (click)="add_photo()" >Add</button>
             <button mat-raised-button (click)="cancle_photo()">Cancle</button>
