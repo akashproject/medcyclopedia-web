@@ -17,6 +17,7 @@ export class SiteHeaderComponent implements OnInit {
   user_data: any = [];
   first_name: string = "";
   full_name: string = "";
+  clg_literal: string = "";
   // showSpinner: boolean = false;
 
   constructor(private signinservice: SigninService,
@@ -83,6 +84,15 @@ export class SiteHeaderComponent implements OnInit {
   logout() {
     this.signinservice.logout();
     this.router.navigate(['/login']);
+  }
+
+  enter_button(event:any){
+    console.log(event.keyCode);
+
+    if(event.keyCode === 13){
+      // console.log("Success");
+      this.router.navigate(['/search'], {state:{clg : this.clg_literal}});
+    }
   }
 
 }

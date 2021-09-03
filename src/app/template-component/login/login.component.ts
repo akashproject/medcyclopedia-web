@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   socialUser: SocialUser | undefined;
   isLoggedin: boolean | undefined;
+  socialUser_detail : any ;
 
   constructor(private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService,
@@ -64,6 +65,14 @@ export class LoginComponent implements OnInit {
       this.socialUser = user;
       this.isLoggedin = (user != null);
       console.log(this.socialUser);
+      this.socialUser_detail = this.socialUser;
+      this.signinservice.loginByGoogle(this.socialUser_detail).subscribe(((data:any) =>{
+        this.signinservice.setToken(this.socialUser_detail.authToken);
+        this.router.navigate(['/home']);
+
+      }))
+
+
     });
   }
 
@@ -109,6 +118,8 @@ export class LoginComponent implements OnInit {
 
     }
   }
+
+  
 
 
 

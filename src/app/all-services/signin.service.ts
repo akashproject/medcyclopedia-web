@@ -92,4 +92,8 @@ export class SigninService {
     })
     return this.http.post(`${environment.apiUrl}/upload-profile-photo`, {file : param},{ headers });
   }
+
+  loginByGoogle(user_detail:any):any {
+    return this.http.post(`${environment.apiUrl}/login-by-google`, {google_data : user_detail});
+  }
 }

@@ -59,7 +59,7 @@ export class ExpertCounsellingComponent implements OnInit {
         console.log("1")
 
       } else {
-        this.time_flag1 = false;
+        this.time_flag1 = false; 
 
       }
       if (Number.parseInt(this.transform) >= 1300) {
@@ -68,24 +68,41 @@ export class ExpertCounsellingComponent implements OnInit {
 
 
       } else {
-        this.time_flag2 = false;
+        this.time_flag2 = false; 
 
       }
-      if (Number.parseInt(this.transform) >= 1700) {
+      if (Number.parseInt(this.transform) >= 2000) {
         this.time_flag3 = true;
         console.log("3")
 
 
       } else {
-        this.time_flag3 = false;
+        this.time_flag3 = false; 
+        
 
       }
-      this.disable_all = false;
+
+      if(this.time_flag1 === false || this.time_flag2 === false || this.time_flag3 === false){
+        this.disable_all = false;
+      }else{
+        this.disable_all = true;
+      }
+     
     }
     else if (this.enterred_date < this.today) {
       // console.log("this date is long gone")
+      this.time_flag3 = true;
+      this.time_flag3 = true;
+      this.time_flag3 = true;
       this.disable_all = true;
       this.snackbar.openSnackBarWithTime("You have enterred a past date", 'close')
+
+    } else if (this.enterred_date > this.today) {
+      console.log("Future date")
+      this.time_flag1 = false;
+      this.time_flag2 = false;
+      this.time_flag3 = false;
+      this.disable_all = false;
 
     }
 

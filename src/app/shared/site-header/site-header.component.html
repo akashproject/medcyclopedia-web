@@ -4,7 +4,7 @@
         <li routerLink="/rne"><img src="assets/images/refer.png" alt=""></li>
     </ul>
     <div class="rigth d-flex align-items-center">
-        <input type="search" placeholder="Search by college name" name="" id="">
+        <input type="search" placeholder="Search by college name" name="clg_literal" id="clg_literal" [(ngModel)]="clg_literal" (keyup)="enter_button($event)">
         <div class="dropdown_back d-flex align-items-center">
             <div class="pro d-flex align-items-center">
                 <img src="assets/images/empty-avatar.png" alt="">

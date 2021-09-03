@@ -70,6 +70,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+import { SearchComponent } from './template-component/search/search.component';
 
 
 
@@ -116,6 +117,7 @@ import {
     AbroadInsListComponent,
     CompareComponent,
     SpinnerComponent,
+    SearchComponent,
 
 
 
