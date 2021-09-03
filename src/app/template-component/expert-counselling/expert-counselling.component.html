@@ -43,21 +43,21 @@
                             <div class="col-md-6">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" id="morning" value="10am-1pm" [(ngModel)]="readioSelected" [disabled]="time_flag1" >
+                                      <input type="radio" #checkboxes name="time" id="morning" value="10am-1pm" [(ngModel)]="readioSelected" [disabled]="time_flag1" >
                                       <label for="morning" class=" d-flex align-center">
                                         <span></span>
                                         10am-1pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" id="afternoon" value="1pm-5pm" [(ngModel)]="readioSelected" [disabled]="time_flag2" > 
+                                      <input type="radio" #checkboxes name="time" id="afternoon" value="1pm-5pm" [(ngModel)]="readioSelected" [disabled]="time_flag2" > 
                                       <label for="afternoon" class=" d-flex align-center">
                                         <span></span>
                                         1pm-5pm
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="time" id="evening" value="5pm-8pm"  [(ngModel)]="readioSelected" [disabled]="time_flag3">
+                                      <input type="radio" #checkboxes name="time" id="evening" value="5pm-8pm"  [(ngModel)]="readioSelected" [disabled]="time_flag3">
                                       <label for="evening" class=" d-flex align-center">
                                         <span></span>
                                         5pm-8pm
@@ -75,21 +75,21 @@
                             <div class="col-md-6">
                                 <div class="radio_back msg d-flex align-center">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="msg" id="video"  value="video" [(ngModel)]="readioSelected2" [disabled]="disable_all">
+                                      <input type="radio" #checkboxes name="msg" id="video"  value="video" [(ngModel)]="readioSelected2" [disabled]="disable_all">
                                       <label for="video" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg1.jpg" alt="">
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio"  id="whatsapp" value="whatsapp" name="msg" [(ngModel)]="readioSelected2" [disabled]="disable_all">
+                                      <input type="radio"  #checkboxes id="whatsapp" value="whatsapp" name="msg" [(ngModel)]="readioSelected2" [disabled]="disable_all">
                                       <label for="whatsapp" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg3.svg" alt="">
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio"  id="phone" value="phone" name="msg" [(ngModel)]="readioSelected2" [disabled]="disable_all">
+                                      <input type="radio"  #checkboxes id="phone" value="phone" name="msg" [(ngModel)]="readioSelected2" [disabled]="disable_all">
                                       <label for="phone" class=" d-flex align-center">
                                         <span></span>
                                         <img src="assets/images/msg.svg" alt="">
@@ -108,14 +108,14 @@
                             <div class="col-md-6">
                                 <div class="radio_back d-flex">
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="lang" id="english" value="english" [(ngModel)]="readioSelected3" [disabled]="disable_all">
+                                      <input type="radio" #checkboxes name="lang" id="english" value="english" [(ngModel)]="readioSelected3" [disabled]="disable_all">
                                       <label for="english" class=" d-flex align-center">
                                         <span></span>
                                         English
                                       </label>
                                     </div>
                                     <div class="port d-flex align-center">
-                                      <input type="radio" name="lang" id="hindi" value="hindi" [(ngModel)]="readioSelected3" [disabled]="disable_all">
+                                      <input type="radio" #checkboxes name="lang" id="hindi" value="hindi" [(ngModel)]="readioSelected3" [disabled]="disable_all">
                                       <label for="hindi" class=" d-flex align-center">
                                         <span></span>
                                         Hindi

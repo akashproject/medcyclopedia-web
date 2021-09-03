@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { OrderService } from 'src/app/all-services/order.service';
 import { WindowRefService } from 'src/app/window-ref.service';
 import { DatePipe } from '@angular/common';
@@ -14,6 +14,8 @@ import { SnackbarService } from 'src/app/all-services/snackbar.service';
 
 })
 export class ExpertCounsellingComponent implements OnInit {
+
+  @ViewChildren("checkboxes") checkboxes: QueryList<ElementRef> | undefined;
   readioSelected: any;
   readioSelected2: any;
   readioSelected3: any;
@@ -43,6 +45,9 @@ export class ExpertCounsellingComponent implements OnInit {
   // }
 
   checkDateAndTime() {
+
+    this.uncheckAll();
+
     console.log(this.date);
     this.enterred_date = this.datepipe.transform(this.date, 'yyMMdd');
     console.log(this.enterred_date)
@@ -54,7 +59,7 @@ export class ExpertCounsellingComponent implements OnInit {
     if (this.enterred_date === this.today) {
       this.transform = this.datepipe.transform(today_date, 'HHMM');
       console.log(this.transform)
-      if (Number.parseInt(this.transform) >= 1000) {
+      if (Number.parseInt(this.transform) >= 1) {
         this.time_flag1 = true;
         console.log("1")
 
@@ -82,11 +87,11 @@ export class ExpertCounsellingComponent implements OnInit {
 
       }
 
-      if(this.time_flag1 === false || this.time_flag2 === false || this.time_flag3 === false){
-        this.disable_all = false;
-      }else{
-        this.disable_all = true;
-      }
+      // if(this.time_flag1 === false || this.time_flag2 === false || this.time_flag3 === false){
+      //   this.disable_all = false;
+      // }else{
+      //   this.disable_all = true;
+      // }
      
     }
     else if (this.enterred_date < this.today) {
@@ -110,16 +115,44 @@ export class ExpertCounsellingComponent implements OnInit {
 
   }
 
+  uncheckAll() {
+    if(this.checkboxes !== undefined){
+      this.checkboxes.forEach((element) => {
+        element.nativeElement.checked = false;
+      });
+    }
+   
+  }
+
   createRzpayOrder() {
 
 
     if (this.disable_all != true) {
-      console.log(this.readioSelected)
-      console.log(this.readioSelected2)
-      console.log(this.readioSelected3)
-      console.log("DAte ", this.date)
-      console.log(this.enddate)
-      this.payWithRazor(12);
+
+      let counter = 0;
+      if(this.checkboxes !== undefined){
+        this.checkboxes.forEach((element) => {
+          if(element.nativeElement.checked === true){
+            counter++;
+          }
+        });
+      }
+
+      if(counter === 3){
+        console.log(this.readioSelected)
+        console.log(this.readioSelected2)
+        console.log(this.readioSelected3)
+        console.log("DAte ", this.date)
+        console.log(this.enddate)
+        this.payWithRazor(12);
+      }
+
+      else{
+        console.log("Entry is missing");
+        this.snackbar.openSnackBarWithTime('Entry missing', 'close');
+      }
+
+     
     }
   }
 
