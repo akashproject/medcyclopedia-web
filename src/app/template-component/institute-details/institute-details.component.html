@@ -226,6 +226,9 @@
             <div class="all_detail_back details_page second" *ngIf="courses">
                 <div class="all_layout d-flex align-items-center ">
                     <h1>Courses</h1>
+                    <div class="all_layout" *ngIf="upFlag">
+                        <div role="alert" class="alert alert-danger">There is no courses </div>
+                    </div> 
                     <table>
                         <thead>
                             <tr>
@@ -275,6 +278,9 @@
             <div class="all_detail_back details_page second" *ngIf="pgallery">
                 <div class="all_layout d-flex align-items-center ">
                     <h1>Institute Gallery </h1>
+                    <div class="all_layout" *ngIf="upFlag_photo">
+                        <div role="alert" class="alert alert-danger">There is no photo </div>
+                    </div>
                     <div class="gallery_section">
                         <div class="row" *ngFor="let photo of ins_photos">
                             <div class="col-lg-4">

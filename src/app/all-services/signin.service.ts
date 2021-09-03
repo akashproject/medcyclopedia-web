@@ -36,11 +36,20 @@ export class SigninService {
 
   logout(){
     localStorage.removeItem(this.JWT_KEY);
+    localStorage.removeItem("login");
     this.user.next(null);
   }
 
   setToken(data : any){
     this.storage.set(this.JWT_KEY, data);
+  }
+
+  setFlag(key:any, value:any){
+    this.storage.set(key, value);
+  }
+
+  getFlag(key:any){
+    return this.storage.get(key) || null;
   }
 
   getUserData(access_token : string) {

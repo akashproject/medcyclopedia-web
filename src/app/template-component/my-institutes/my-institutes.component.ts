@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InstitutesService } from 'src/app/all-services/institutes.service';
 import { SigninService } from 'src/app/all-services/signin.service';
 
@@ -16,7 +17,8 @@ export class MyInstitutesComponent implements OnInit {
   upFlag: boolean = false;
   
   constructor(private signinservice: SigninService,
-    private institutionService : InstitutesService ) { }
+    private institutionService : InstitutesService, 
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -37,6 +39,10 @@ export class MyInstitutesComponent implements OnInit {
         })
       })
     }
+  }
+
+  viewIns(ins:any){
+    this.router.navigate(['/fyc/fyi/institute-list/institute-details/'+ins.id])
   }
 
 }

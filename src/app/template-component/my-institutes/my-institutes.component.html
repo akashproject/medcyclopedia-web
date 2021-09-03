@@ -6,7 +6,7 @@
             <h1>My Institutions</h1>
             <ul class="list_back" *ngFor="let myins of my_inst">
                 <li>
-                    <h2>{{myins.title}}</h2>
+                    <h2><span (click)="viewIns(myins)">{{myins.title}}</span></h2>
                     <p><span> You viewed details of this institute</span><br>
                     You expressed interest to enrol for this institute</p>
                 </li>

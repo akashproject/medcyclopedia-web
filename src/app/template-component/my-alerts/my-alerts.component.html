@@ -4,6 +4,9 @@
         <app-site-banner></app-site-banner>
         <div class="all_detail_back">
             <h1>My Alerts</h1>
+            <div class="all_layout" *ngIf="upFlag">
+                <div role="alert" class="alert alert-danger">There is no alert </div>
+            </div> 
             <div class="all_layout d-flex align-items-center">
                 <div class="left d-flex align-items-center flex-wrap">
                     <ul class="notify_list" *ngFor="let alert of alerts">

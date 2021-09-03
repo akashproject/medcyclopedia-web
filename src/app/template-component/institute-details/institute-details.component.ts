@@ -28,6 +28,7 @@ export class InstituteDetailsComponent implements OnInit {
   upFlag: boolean = false;
   ins_photos: any;
   like_counter : any;
+  upFlag_photo : boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private insService: InstitutesService,
     private courseService: CoursesService,
@@ -51,6 +52,9 @@ export class InstituteDetailsComponent implements OnInit {
     this.courseService.getInstituteCourses(id).subscribe(data => {
       console.log(data);
       this.institute_courses = data;
+      if(this.institute_courses.length === 0) {
+        this.upFlag = true;
+      }
 
     });
 
@@ -76,7 +80,7 @@ export class InstituteDetailsComponent implements OnInit {
       console.log(data);
       this.ins_photos = data;
       if(this.ins_photos.length === 0){
-        this.upFlag = true;
+        this.upFlag_photo = true;
       }
     })
   }

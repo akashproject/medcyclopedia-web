@@ -9,6 +9,7 @@ import { InstitutesService } from 'src/app/all-services/institutes.service';
 export class MyAlertsComponent implements OnInit {
 
   alerts : any = [];
+  upFlag: boolean = false;
 
   constructor(private instituteService : InstitutesService) { }
 
@@ -18,6 +19,9 @@ export class MyAlertsComponent implements OnInit {
       console.log(data);
       // this.loader.hideLoading();
       this.alerts = data;
+      if(this.alerts.length === 0){
+        this.upFlag = true;
+      }
     })
   }
 

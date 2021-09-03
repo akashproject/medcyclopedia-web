@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
   socialUser: SocialUser | undefined;
   isLoggedin: boolean | undefined;
   socialUser_detail : any ;
+  socialmedia_flag: any;
+
 
   constructor(private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService,
@@ -42,38 +44,57 @@ export class LoginComponent implements OnInit {
 
     console.log(this.access_token);
 
-    if (this.access_token !== null) {
-      this.signinservice.getUserData(this.access_token.access_token).subscribe((res: any) => {
+    this.socialmedia_flag = this.signinservice.getFlag("login");
 
-        console.log(res);
-        this.token_data = res;
+    console.log(this.socialmedia_flag);
 
-        if (JSON.stringify(this.token_data) !== '{}') {
+    if(this.socialmedia_flag === "google"){
+
+      this.socialAuthService.authState.subscribe((user) => {
+        this.socialUser = user;
+        this.isLoggedin = (user != null);
+        console.log(this.socialUser);
+        this.socialUser_detail = this.socialUser;
+        this.signinservice.loginByGoogle(this.socialUser_detail).subscribe(((data:any) =>{
+          this.signinservice.setToken(this.socialUser_detail.authToken);
+          this.signinservice.setFlag("login","google");
           this.router.navigate(['/home']);
-
-        } else {
-          this.signinservice.logout();
-        }
-
-      }, (err: any) => {
-        console.log(err);
-        this.snackmatservice.openSnackBarWithTime('Please login', 'close');
+  
+        }))
+  
+  
       });
+
+    } else if(this.socialmedia_flag === "facebook"){
+
+      //facebook login
+      
+    } else if(this.socialmedia_flag === null){
+      if (this.access_token !== null) {
+        console.log("not a social media login");
+        this.signinservice.getUserData(this.access_token.access_token).subscribe((res: any) => {
+  
+          console.log(res);
+          this.token_data = res;
+  
+          if (JSON.stringify(this.token_data) !== '{}') {
+            this.router.navigate(['/home']);
+  
+          } else {
+            this.signinservice.logout();
+          }
+  
+        }, (err: any) => {
+          console.log(err);
+          this.snackmatservice.openSnackBarWithTime('Please login', 'close');
+        });
+      }
     }
 
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.isLoggedin = (user != null);
-      console.log(this.socialUser);
-      this.socialUser_detail = this.socialUser;
-      this.signinservice.loginByGoogle(this.socialUser_detail).subscribe(((data:any) =>{
-        this.signinservice.setToken(this.socialUser_detail.authToken);
-        this.router.navigate(['/home']);
 
-      }))
+    
 
-
-    });
+    
   }
 
   loginWithGoogle(): void {

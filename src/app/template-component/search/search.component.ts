@@ -11,10 +11,10 @@ import { environment } from 'src/environments/environment';
 export class SearchComponent implements OnInit {
   loc: any;
   clg: any;
-  college_data: any;
+  college_data: any = [];
   college_flag: boolean = false;
   counter: any;
-  comparecollege: any;
+  comparecollege: any = [];
   compare_button_flag: boolean = false;
   router: any;
   uploadsUrl: any;
