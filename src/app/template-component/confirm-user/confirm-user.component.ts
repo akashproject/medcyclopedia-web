@@ -147,4 +147,11 @@ export class ConfirmUserComponent implements OnInit {
     next.focus();
   }
 
+  get errorControl(): any {
+    if (true) {
+      return true;
+
+    }
+  }
+
 }

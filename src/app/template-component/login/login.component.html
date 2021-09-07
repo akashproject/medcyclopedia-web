@@ -33,9 +33,9 @@
                   </div>
                 <button type="submit" [disabled]="!signinForm.valid">Login</button>
                 <span routerLink="/sign-up">first time here?</span>
-                <p>Forgot Password? Retrive <span routerLink="/forgot-pass">Here.</span></p>
+                <p><span routerLink="/forgot-pass">Forgot Password.</span></p>
                 <div class="d-flex">
-                  <div (click)="loginWithGoogle()" class="all_button google d-flex align-items-center justify-content-center">
+                  <div (click)="loginWithGoogle()" class="all_button google d-flex align-items-center justify-content-center" style="background: #ea4335;color: #fff;">
                     <img src="assets/images/g_logo.png" alt="">
                       Google
                   </div>

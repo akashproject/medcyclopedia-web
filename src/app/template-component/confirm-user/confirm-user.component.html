@@ -17,10 +17,30 @@
                      <input #otp5 type="text" formControlName="place5" id="place5" maxlength="1" (keyup)="gotoNextField(otp6)">
                      <input #otp6 type="text" formControlName="place6" id="place6" maxlength="1">
                  </div>
-                 <div class="button_back">
+                <div class="portion">
+                    <!--<label for="">Enter Password</label>-->
+                    <input type="password" placeholder="Enter Password"  id="password"  formControlName="password">
+                </div>
+                <div *ngIf="errorControl.password.touched && errorControl.password.invalid">
+                    <span style="color: red;" *ngIf="errorControl.password.errors.required">
+                      Password is required.
+                    </span>
+                </div>
+
+                <div class="portion">
+                    <!--<label for="">Enter Password</label>-->
+                    <input type="password" placeholder="Enter Confirm Password"  id="password"  formControlName="password">
+                </div>
+                <div *ngIf="errorControl.password.touched && errorControl.password.invalid">
+                    <span style="color: red;" *ngIf="errorControl.password.errors.required">
+                      Password is required.
+                    </span>
+                </div>
+
+                <div class="button_back">
                      <button>resent OTP</button>
                      <button [disabled]="!otpForm.valid">verify</button>
-                 </div>
+                </div>
                  
              </form>
          </div>
