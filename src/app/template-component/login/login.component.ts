@@ -83,17 +83,14 @@ export class LoginComponent implements OnInit {
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
         d => this.signinservice.loginByGoogle(d).subscribe(((data:any) =>{
-          this.signinservice.setToken(d.authToken);
-          this.signinservice.setFlag("login","google");
-          this.router.navigate(['/home']); 
+          this.signinservice.setToken(data);
+          this.token_data = data;
+          this.token = this.token_data.access_token;
+          this.router.navigate(['/home']);
         }))
     ).catch(error => {
       console.log(error);
     });;
-  }
-
-  logOut(): void {
-    this.socialAuthService.signOut();
   }
 
   loginWithFacebook(): void {
@@ -103,11 +100,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.phone);
-    console.log(this.password);
-
     this.signinservice.signinUser(this.phone, this.password).subscribe(data => {
-      console.log(data);
       this.signinservice.setToken(data);
       this.token_data = data;
       this.token = this.token_data.access_token;
@@ -121,7 +114,10 @@ export class LoginComponent implements OnInit {
       // this.displayToastFailure();
       this.snackmatservice.openSnackBarWithTime("Mobile or password is incorrect!", 'close');
     });
+  }
 
+  logOut(): void {
+    this.socialAuthService.signOut();
   }
 
   get errorControl(): any {

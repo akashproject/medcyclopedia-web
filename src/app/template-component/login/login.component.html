@@ -34,22 +34,23 @@
                 <button type="submit" [disabled]="!signinForm.valid">Login</button>
                 <span routerLink="/sign-up">first time here?</span>
                 <p><span routerLink="/forgot-pass">Forgot Password.</span></p>
-                <div class="d-flex">
-                  <div (click)="loginWithGoogle()" class="all_button google d-flex align-items-center justify-content-center" style="background: #ea4335;color: #fff;">
-                    <img src="assets/images/g_logo.png" alt="">
-                      Google
-                  </div>
-                  <div (click)="loginWithFacebook()" class="all_button facebook d-flex align-items-center justify-content-center">
-                      <img src="assets/images/f_logo.png" alt="">
-                      Facebook
-                  </div>
-                  <!-- <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
-                </div>
+                
                 <!--<div>
                   <button type="button" class="google" (click)="loginWithGoogle()">Login with Google</button>
                   <button type="button" class="facebook" (click)="loginWithFacebook()">Signin with Facebook</button>
                 </div>-->
             </form>
+            <div class="d-flex">
+              <div (click)="loginWithGoogle()" class="all_button google d-flex align-items-center justify-content-center" style="background: #ea4335;color: #fff;">
+                <img src="assets/images/g_logo.png" alt="">
+                  Google
+              </div>
+              <div (click)="loginWithFacebook()" class="all_button facebook d-flex align-items-center justify-content-center">
+                  <img src="assets/images/f_logo.png" alt="">
+                  Facebook
+              </div>
+              <!-- <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+            </div>
         </div>
     </div>
 </div>

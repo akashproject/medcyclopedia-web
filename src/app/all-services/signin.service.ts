@@ -112,6 +112,6 @@ export class SigninService {
     loginData.provider = user_detail.provider;
     loginData.photoUrl = user_detail.photoUrl;
     console.log("before post",loginData);
-    return this.http.post(`${environment.apiUrl}/login-by-google`, {google_data : loginData});
+    return this.http.post(`${environment.apiUrl}/login-by-google`, {loginData});
   }
 }
