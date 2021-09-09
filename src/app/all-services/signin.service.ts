@@ -103,6 +103,15 @@ export class SigninService {
   }
 
   loginByGoogle(user_detail:any):any {
-    return this.http.post(`${environment.apiUrl}/login-by-google`, {google_data : user_detail});
+    console.log("before post",user_detail.email);
+    
+    let loginData : any = {};
+    loginData.email = user_detail.email;
+    loginData.name = user_detail.name;
+    loginData.id = user_detail.id;
+    loginData.provider = user_detail.provider;
+    loginData.photoUrl = user_detail.photoUrl;
+    console.log("before post",loginData);
+    return this.http.post(`${environment.apiUrl}/login-by-google`, {google_data : loginData});
   }
 }

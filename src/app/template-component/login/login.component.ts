@@ -53,16 +53,8 @@ export class LoginComponent implements OnInit {
       this.socialAuthService.authState.subscribe((user) => {
         this.socialUser = user;
         this.isLoggedin = (user != null);
-        console.log(this.socialUser);
+        console.log("i am socialUser",this.socialUser);
         this.socialUser_detail = this.socialUser;
-        this.signinservice.loginByGoogle(this.socialUser_detail).subscribe(((data:any) =>{
-          this.signinservice.setToken(this.socialUser_detail.authToken);
-          this.signinservice.setFlag("login","google");
-          this.router.navigate(['/home']);
-  
-        }))
-  
-  
       });
 
     } else if(this.socialmedia_flag === "facebook"){
@@ -72,33 +64,30 @@ export class LoginComponent implements OnInit {
     } else if(this.socialmedia_flag === null){
       if (this.access_token !== null) {
         console.log("not a social media login");
-        this.signinservice.getUserData(this.access_token.access_token).subscribe((res: any) => {
-  
+        this.signinservice.getUserData(this.access_token.access_token).subscribe((res: any) => { 
           console.log(res);
-          this.token_data = res;
-  
+          this.token_data = res; 
           if (JSON.stringify(this.token_data) !== '{}') {
-            this.router.navigate(['/home']);
-  
+            this.router.navigate(['/home']); 
           } else {
             this.signinservice.logout();
           }
-  
         }, (err: any) => {
           console.log(err);
           this.snackmatservice.openSnackBarWithTime('Please login', 'close');
         });
       }
     }
-
-
-    
-
-    
   }
 
   loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(d => console.log(d)).catch(error => {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+        d => this.signinservice.loginByGoogle(d).subscribe(((data:any) =>{
+          this.signinservice.setToken(d.authToken);
+          this.signinservice.setFlag("login","google");
+          this.router.navigate(['/home']); 
+        }))
+    ).catch(error => {
       console.log(error);
     });;
   }
@@ -108,7 +97,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithFacebook(): void {
-    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then(d => console.log(d)).catch(error => {
+      console.log(error);
+    });
   }
 
   login() {
